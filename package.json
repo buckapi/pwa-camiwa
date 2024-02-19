@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "start:frontend": "ng serve --port 4050 --host 0.0.0.0",
+    "start:frontend": "ng serve --port 4060 --host 0.0.0.0",
     "start:backend": "./src/database/pocketbase serve --http 0.0.0.0:8050"
   },
   "private": true,

@@ -146,8 +146,8 @@
     --------------------------------------------- */
     if ($('.collapseText').length) {
         var button = $(".collapseText");
-        var originalText = "Hide filters";
-        var newText = "Show filters";
+        var originalText = "Ocultar filtros";
+        var newText = "Mostrar filtros";
         var isToggled = false;
 
         button.on("click", function () {
@@ -357,11 +357,11 @@
         rangeSlider.ionRangeSlider({
             skin: "round",
             type: "double",
-            min: 500,
-            max: 5000,
-            from: 500,
-            to: 3000,
-            prefix: "$"
+            min: 50,
+            max: 500,
+            from: 50,
+            to: 300,
+            prefix: "Km "
         });
     }
     /*-------------------------------------------------

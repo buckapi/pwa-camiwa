@@ -26,6 +26,15 @@ export const ScriptStore: Scripts[] = [
   {name: 'custom-script', src: 'assets/camiwa/js/script.js'},
   {name: 'listing-map', src: 'assets/camiwa/js/listing-map.js'},
 
+  {name: 'metisMenu', src: 'assets/camiwa-dash/plugins/metisMenu/metisMenu.min.js'},
+  {name: 'perfect', src: 'assets/camiwa-dash/plugins/perfect-scrollbar/perfect-scrollbar.min.js'},
+  {name: 'app', src: 'assets/camiwa-dash/dist/js/app.min.js'},
+  {name: 'dashboard', src: 'assets/camiwa-dash/dist/js/dashboard.js'},
+  {name: 'messenger', src: 'assets/camiwa-dash/dist/js/messenger.active.js'},
+
+
+
+
   
 
 
