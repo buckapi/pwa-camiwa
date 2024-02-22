@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GlobalService } from '../../../services/global.service';
 
 @Component({
   selector: 'app-sidebar-dashboard',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './sidebar-dashboard.component.css'
 })
 export class SidebarDashboardComponent {
-
+constructor(public global:GlobalService){}
 }

@@ -22,46 +22,36 @@
         </div>
         <div class="mb-4 border-bottom pb-4">
             <div class="mb-3">
-                <h4 class="fs-5 fw-semibold mb-2">Especialidades graficas</h4>
-                <p class="mb-0 small">Duis a leo sit amet odio volutpat auctor ut a lorem.</p>
+                <h4 class="fs-5 fw-semibold mb-2">Más consultadas</h4>
+                <p class="mb-0 small">Top 6 de especialidades.</p>
             </div>
             <div class="row g-3">
-                <div class="col-4 text-center body-types-tem">
-                    <svg class="filter-svg-icon" width="64" height="25" viewBox="0 0 64 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <use xlink:href="#car-1"></use>
-                    </svg>
-                    <div class="fs-11 fw-semibold mt-1">Sedan</div>
+                <div class="col-4 text-center body-types-tem" *ngFor="let specialty of global.specialties" (click)="setSpecialty(specialty.id)" style="cursor: pointer;">
+                    <img src="{{specialty.image}}" alt="Descripción opcional">
+                    
+                    <div class="fs-11 fw-semibold mt-1">{{specialty.name}}</div>
+                </div>
+                <!-- <div class="col-4 text-center">
+                    <img src="assets/camiwa/images/icon/pediatrics.svg" alt="Descripción opcional">
+                    <div class="fs-11 fw-semibold mt-1">Pediatría</div>
                 </div>
                 <div class="col-4 text-center">
-                    <svg class="filter-svg-icon" width="64" height="25" viewBox="0 0 64 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <use xlink:href="#car-2"></use>
-                    </svg>
-                    <div class="fs-11 fw-semibold mt-1">SUV</div>
+                    <img src="assets/camiwa/images/icon/fmy_obstetrics.svg" alt="Descripción opcional">
+                   
+                    <div class="fs-11 fw-semibold mt-1">Ginecología y Obstetricia </div>
                 </div>
                 <div class="col-4 text-center">
-                    <svg class="filter-svg-icon" width="64" height="25" viewBox="0 0 64 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <use xlink:href="#car-3"></use>
-                    </svg>
-                    <div class="fs-11 fw-semibold mt-1">Coupe</div>
-                </div>
-                <div class="col-4 text-center">
-                    <svg class="filter-svg-icon" width="64" height="25" viewBox="0 0 64 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <use xlink:href="#car-1"></use>
-                    </svg>
+                   
                     <div class="fs-11 fw-semibold mt-1">Hatchback</div>
                 </div>
                 <div class="col-4 text-center">
-                    <svg class="filter-svg-icon" width="64" height="25" viewBox="0 0 64 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <use xlink:href="#car-2"></use>
-                    </svg>
+                   
                     <div class="fs-11 fw-semibold mt-1">Convertible</div>
                 </div>
                 <div class="col-4 text-center">
-                    <svg class="filter-svg-icon" width="64" height="25" viewBox="0 0 64 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <use xlink:href="#car-3"></use>
-                    </svg>
+                    
                     <div class="fs-11 fw-semibold mt-1">Wagon</div>
-                </div>
+                </div> -->
             </div>
         </div>
         <!-- <div class="mb-4 border-bottom pb-4">
@@ -103,57 +93,16 @@
         </div> -->
         <div class="mb-4 border-bottom pb-4">
             <div class="mb-3">
-                <h4 class="fs-5 fw-semibold mb-2">Especialidades</h4>
-                <p class="mb-0 small">Duis a leo sit amet odio volutpat auctor ut a lorem.</p>
+                <h4 class="fs-5 fw-semibold mb-2">Oferta de especialistas</h4>
+                <p class="mb-0 small">Número de especialistas disponibles.</p>
             </div>
             <!-- Start Form Check -->
-            <div class="form-check mb-2">
+            <div class="form-check mb-2" *ngFor="let specialty of global.specialties">
                 <input class="form-check-input" type="checkbox" value="" id="skillsOne">
-                <label class="form-check-label" for="skillsOne">Navigation<span class="count fs-13 ms-1 text-muted">(62)</span></label>
+                <label class="form-check-label" for="skillsOne">{{specialty.name}}<span class="count fs-13 ms-1 text-muted">({{ generateRandomNumber() }})</span></label>
             </div>
-            <!-- End Form Check -->
-            <!-- Start Form Check -->
-            <div class="form-check mb-2">
-                <input class="form-check-input" type="checkbox" value="" id="skillsTwo" checked>
-                <label class="form-check-label" for="skillsTwo">Sun Roof<span class="count fs-13 ms-1 text-muted">(31)</span></label>
-            </div>
-            <!-- End Form Check -->
-            <!-- Start Form Check -->
-            <div class="form-check mb-2">
-                <input class="form-check-input" type="checkbox" value="" id="skillsThree">
-                <label class="form-check-label" for="skillsThree">Reversing Camera<span class="count fs-13 ms-1 text-muted">(20)</span></label>
-            </div>
-            <!-- End Form Check -->
-            <!-- Start Form Check -->
-            <div class="form-check mb-2">
-                <input class="form-check-input" type="checkbox" value="" id="skillsFour">
-                <label class="form-check-label" for="skillsFour">GCC Specifications<span class="count fs-13 ms-1 text-muted">(43)</span></label>
-            </div>
-            <!-- End Form Check -->
-            <!-- Start Form Check -->
-            <div class="form-check mb-2">
-                <input class="form-check-input" type="checkbox" value="" id="skillsFive">
-                <label class="form-check-label" for="skillsFive">Leather Seats<span class="count fs-13 ms-1 text-muted">(16)</span></label>
-            </div>
-            <!-- End Form Check -->
-            <!-- Start Form Check -->
-            <div class="form-check mb-2">
-                <input class="form-check-input" type="checkbox" value="" id="skillsSix">
-                <label class="form-check-label" for="skillsSix">Parking Sensors<span class="count fs-13 ms-1 text-muted">(22)</span></label>
-            </div>
-            <!-- End Form Check -->
-            <!-- Start Form Check -->
-            <div class="form-check mb-2">
-                <input class="form-check-input" type="checkbox" value="" id="skillsSeven">
-                <label class="form-check-label" for="skillsSeven">7 Seater<span class="count fs-13 ms-1 text-muted">(21)</span></label>
-            </div>
-            <!-- End Form Check -->
-            <!-- Start Form Check -->
-            <div class="form-check mb-0">
-                <input class="form-check-input" type="checkbox" value="" id="skillsEight">
-                <label class="form-check-label" for="skillsEight">Service Contract<span class="count fs-13 ms-1 text-muted">(17)</span></label>
-            </div>
-            <!-- End Form Check -->
+            
+
         </div>
         <div class="mb-4 border-bottom pb-4">
             <div class="mb-3">
