@@ -42,7 +42,7 @@
 :root,
 [data-bs-theme=light] {
     --bs-blue: #0c72c6;
-    --bs-primary: #2a8c4a;
+    --bs-primary: #41b6bd;
     --bs-primary-rgb: 248, 69, 37;
     --footer-bg-color: #191e25;
     --bs-light: #f8f4f3;
@@ -123,7 +123,7 @@ h6 {
 ----------------------------------------------------------------- */
 
 [data-bs-theme=dark] .text-dark {
-    color: #2a8c4a;) !important;
+    color: #41b6bd;) !important;
 }
 
 /* Shadow  ----------*/
@@ -533,7 +533,7 @@ h6 {
 /* progress -------- */
 .progress,
 .progress-stacked {
-    --bs-progress-bar-bg: #2a8c4a;
+    --bs-progress-bar-bg: #41b6bd;
     --bs-progress-height: .4rem;
 }
 
@@ -617,19 +617,19 @@ h6 {
 }
 
 .red span {
-    background: -o-linear-gradient(#2a8c4a 0%, #2a8c4a 100%);
-    background: -webkit-gradient(linear, left top, left bottom, from(#2a8c4a), to(#2a8c4a));
-    background: linear-gradient(#2a8c4a 0%, #2a8c4a 100%);
+    background: -o-linear-gradient(#41b6bd 0%, #41b6bd 100%);
+    background: -webkit-gradient(linear, left top, left bottom, from(#41b6bd), to(#41b6bd));
+    background: linear-gradient(#41b6bd 0%, #41b6bd 100%);
 }
 
 .red span::before {
-    border-left-color: #2a8c4a;
-    border-top-color: #2a8c4a;
+    border-left-color: #41b6bd;
+    border-top-color: #41b6bd;
 }
 
 .red span::after {
-    border-right-color: #2a8c4a;
-    border-top-color: #2a8c4a;
+    border-right-color: #41b6bd;
+    border-top-color: #41b6bd;
 }
 
 .blue span {
@@ -930,20 +930,20 @@ textarea.form-control {
 
 /*Button primary*/
 .btn-primary {
-    --bs-btn-bg: #2a8c4a;
-    --bs-btn-border-color: #2a8c4a;
+    --bs-btn-bg: #41b6bd;
+    --bs-btn-border-color: #41b6bd;
     --bs-btn-hover-bg: #64c27b;
     --bs-btn-hover-border-color: #64c27b;
     --bs-btn-focus-shadow-rgb: none;
     --bs-btn-active-bg: #64c27b;
     --bs-btn-active-border-color: #64c27b;
-    --bs-btn-disabled-bg: #2a8c4a;
-    --bs-btn-disabled-border-color: #2a8c4a;
+    --bs-btn-disabled-bg: #41b6bd;
+    --bs-btn-disabled-border-color: #41b6bd;
 }
 
 .btn-outline-primary {
-    --bs-btn-color: #2a8c4a;
-    --bs-btn-border-color: #2a8c4a;
+    --bs-btn-color: #41b6bd;
+    --bs-btn-border-color: #41b6bd;
     --bs-btn-hover-bg: #64c27b;
     --bs-btn-hover-border-color: #64c27b;
     --bs-btn-focus-shadow-rgb: 13, 110, 253;
@@ -983,15 +983,15 @@ textarea.form-control {
     --bs-btn-color: #212529;
     --bs-btn-bg: #fff;
     --bs-btn-border-color: #ced4da;
-    --bs-btn-hover-color: #2a8c4a;
+    --bs-btn-hover-color: #41b6bd;
     --bs-btn-hover-bg: #cdcdcd;
     --bs-btn-hover-border-color: #c6c7c8;
     --bs-btn-focus-shadow-rgb: 211, 212, 213;
-    --bs-btn-active-color: #2a8c4a;
+    --bs-btn-active-color: #41b6bd;
     --bs-btn-active-bg: #e7e7e7;
     --bs-btn-active-border-color: #babbbc;
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #2a8c4a;
+    --bs-btn-disabled-color: #41b6bd;
     --bs-btn-disabled-bg: #fff;
     --bs-btn-disabled-border-color: #ced4da;
 }
@@ -2103,7 +2103,7 @@ hr {
 /* Section Header Title ----------------------*/
 
 .text-span {
-    background-image: url("data:image/svg+xml,%3Csvg width='262' height='17' viewBox='0 0 262 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.99931 12.9463C70.3926 7.14883 214.09 -1.29457 257.733 11.3115' stroke='%2#2a8c4a' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg width='262' height='17' viewBox='0 0 262 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.99931 12.9463C70.3926 7.14883 214.09 -1.29457 257.733 11.3115' stroke='%2#41b6bd' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E%0A");
     background-position: 50% 100%;
     background-repeat: no-repeat;
     background-size: auto;

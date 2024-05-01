@@ -85,7 +85,7 @@
         // ApexCharts Options
         var lightOptions = {
             // Light theme options
-            colors: ['#2a8c4a'],
+            colors: ['#41b6bd'],
             series: [
                 {
                     data: [10, 20, 15, 30, 35, 30, 45, 59, 30, 35, 25, 29, 15]
@@ -122,7 +122,7 @@
                         [
                             {
                                 offset: 0,
-                                color: "#2a8c4a",
+                                color: "#41b6bd",
                                 opacity: 1.0
                             },
                             {
@@ -166,7 +166,7 @@
         };
 
         var darkOptions = {
-            colors: ['#2a8c4a'],
+            colors: ['#41b6bd'],
             series: [
                 {
                     data: [10, 20, 15, 30, 35, 30, 45, 59, 30, 35, 25, 29, 15]
@@ -203,7 +203,7 @@
                         [
                             {
                                 offset: 0,
-                                color: "#2a8c4a",
+                                color: "#41b6bd",
                                 opacity: 1.0
                             },
                             {
