@@ -204,7 +204,7 @@
         Theia sticky sidebar
     --------------------------------------------- */
     $(".content, .sidebar").theiaStickySidebar({
-        additionalMarginTop: 90
+        additionalMarginTop: 1
     });
 
     /*-------------------------------------------------
@@ -580,4 +580,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { GlobalService } from '../../../services/global.service';
+import { virtualRouter } from '@app/services/virtualRouter.service';
 
 @Component({
   selector: 'app-header-home',
@@ -10,6 +11,7 @@ import { GlobalService } from '../../../services/global.service';
 })
 export class HeaderHomeComponent {
 constructor(
-  public global:GlobalService
+  public global:GlobalService,
+  public virtualRouter:virtualRouter
 ){}
 }

@@ -26,7 +26,7 @@
 
 :root,
 [data-bs-theme=light] {
-    --bs-primary: #41b6bd;
+    --bs-primary: #2a8c4a;
     --bs-primary-rgb: 248, 69, 37;
     --bs-light-rgb: 248, 244, 243;
     --bs-dark-rgb: 25, 30, 37;
@@ -51,15 +51,15 @@
 
 /*Button primary*/
 .btn-primary {
-    --bs-btn-bg: #41b6bd;
-    --bs-btn-border-color: #41b6bd;
-    --bs-btn-hover-bg: #eb3616;
-    --bs-btn-hover-border-color: #eb3616;
+    --bs-btn-bg: #2a8c4a;
+    --bs-btn-border-color: #2a8c4a;
+    --bs-btn-hover-bg: #2a8c4a;
+    --bs-btn-hover-border-color: #2a8c4a;
     --bs-btn-focus-shadow-rgb: none;
-    --bs-btn-active-bg: #eb3616;
-    --bs-btn-active-border-color: #eb3616;
-    --bs-btn-disabled-bg: #41b6bd;
-    --bs-btn-disabled-border-color: #41b6bd;
+    --bs-btn-active-bg: #2a8c4a;
+    --bs-btn-active-border-color: #2a8c4a;
+    --bs-btn-disabled-bg: #2a8c4a;
+    --bs-btn-disabled-border-color: #2a8c4a;
 }
 
 /* ----------------------------------------------------------------
@@ -277,7 +277,7 @@
 }
 
 .sidebar-header .sidebar-brand .sidebar-brand_text span {
-    color: #41b6bd;
+    color: #2a8c4a;
     font-family: 'Caveat', cursive;
 }
 
@@ -308,7 +308,7 @@
 }
 
 .sidebar-nav ul li a:hover {
-    color: #41b6bd;
+    color: #2a8c4a;
 }
 
 .dark .sidebar-nav ul li a {
@@ -317,7 +317,7 @@
 }
 
 .dark .sidebar-nav ul li a:hover {
-    color: #41b6bd;
+    color: #2a8c4a;
 }
 
 .sidebar-nav ul li a svg {
@@ -332,11 +332,11 @@
 }
 
 .sidebar-nav ul li.mm-active a {
-    color: #41b6bd;
+    color: #2a8c4a;
     background-color: rgba(248, 69, 37, 0.1);
     -webkit-box-shadow: none;
     box-shadow: none;
-    border-color: #41b6bd;
+    border-color: #2a8c4a;
 }
 
 .nav.metismenu li a i,
@@ -377,11 +377,11 @@
 }
 
 .sidebar-nav.sidebar-icon-color ul li:nth-child(8n+8) a i {
-    color: #41b6bd;
+    color: #2a8c4a;
 }
 
 .dark .sidebar-nav ul li.mm-active a {
-    color: #41b6bd;
+    color: #2a8c4a;
 }
 
 .sidebar-nav ul li .nav-second-level li a {
@@ -398,11 +398,11 @@
 .sidebar-nav ul li .nav-second-level li a:hover,
 .sidebar-nav ul li.mm-active .nav-second-level li.mm-active .nav-third-level li a:hover,
 .sidebar-nav ul li.mm-active .nav-second-level li.mm-active .nav-third-level li.mm-active .nav-fourth-level li a:hover {
-    color: #41b6bd;
+    color: #2a8c4a;
 }
 
 .sidebar-nav ul li.mm-active ul li.mm-active a {
-    color: #41b6bd;
+    color: #2a8c4a;
     font-weight: 500;
 }
 
@@ -413,12 +413,12 @@
 }
 
 .sidebar-nav ul li.mm-active .nav-second-level li.mm-active .nav-third-level li.mm-active a {
-    color: #41b6bd;
+    color: #2a8c4a;
     font-weight: 500;
 }
 
 .sidebar-nav ul li.mm-active .nav-second-level li.mm-active .nav-third-level li.mm-active .nav-fourth-level li.mm-active a {
-    color: #41b6bd;
+    color: #2a8c4a;
 }
 
 .dark .sidebar-nav ul li .nav-second-level li a,
@@ -430,13 +430,13 @@
 .dark .sidebar-nav ul li .nav-second-level li a:hover,
 .dark .sidebar-nav ul li.mm-active .nav-second-level li.mm-active .nav-third-level li a:hover,
 .dark .sidebar-nav ul li.mm-active .nav-second-level li.mm-active .nav-third-level li.mm-active .nav-fourth-level li a:hover {
-    color: #41b6bd;
+    color: #2a8c4a;
 }
 
 .dark .sidebar-nav ul li.mm-active ul li.mm-active a,
 .dark .sidebar-nav ul li.mm-active .nav-second-level li.mm-active .nav-third-level li.mm-active a,
 .dark .sidebar-nav ul li.mm-active .nav-second-level li.mm-active .nav-third-level li.mm-active .nav-fourth-level li.mm-active a {
-    color: #41b6bd;
+    color: #2a8c4a;
     font-weight: 500;
 }
 
@@ -506,7 +506,7 @@
 
 
 .navbar-custom-menu .search .search__text:focus {
-    border-color: #41b6bd !important;
+    border-color: #2a8c4a !important;
 }
 
 .navbar-custom-menu .search .search__helper {
@@ -687,7 +687,7 @@
     position: absolute;
     height: 32px;
     width: 6px;
-    background-color: #41b6bd;
+    background-color: #2a8c4a;
     left: 0;
     top: 50%;
     -webkit-transform: translate(0, -50%);
@@ -768,8 +768,8 @@ textarea.form-control {
 
 .btn-main {
     --bs-btn-color: #212529;
-    --bs-btn-bg: #41b6bd;
-    --bs-btn-border-color: #41b6bd;
+    --bs-btn-bg: #2a8c4a;
+    --bs-btn-border-color: #2a8c4a;
     --bs-btn-hover-color: #212529;
     --bs-btn-hover-bg: #7ec111;
     --bs-btn-hover-border-color: #7ec111;
@@ -777,8 +777,8 @@ textarea.form-control {
     --bs-btn-active-bg: #7ec111;
     --bs-btn-active-border-color: #7ec111;
     --bs-btn-disabled-color: #212529;
-    --bs-btn-disabled-bg: #41b6bd;
-    --bs-btn-disabled-border-color: #41b6bd;
+    --bs-btn-disabled-bg: #2a8c4a;
+    --bs-btn-disabled-border-color: #2a8c4a;
 }
 
 .required:after {
@@ -835,7 +835,7 @@ textarea.form-control {
     top: 50%;
     right: 5px;
     position: absolute;
-    color: #41b6bd;
+    color: #2a8c4a;
     cursor: pointer;
     pointer-events: all;
     -webkit-transform: translate(-5px, -50%);
@@ -1043,12 +1043,12 @@ textarea.form-control {
 .dark .vertical-navigation li .nav-second-level li a:hover,
 .dark .vertical-navigation li.mm-active .nav-second-level li.mm-active .nav-third-level li a:hover,
 .dark .vertical-navigation li.mm-active .nav-second-level li.mm-active .nav-third-level li.mm-active .nav-fourth-level li a:hover {
-    color: #41b6bd;
+    color: #2a8c4a;
 }
 
 .vertical-navigation li.mm-active a,
 .dark .vertical-navigation li.mm-active a {
-    color: #41b6bd;
+    color: #2a8c4a;
 }
 
 .vertical-navigation li .nav-second-level {
@@ -1075,7 +1075,7 @@ textarea.form-control {
 
 .vertical-navigation li .nav-second-level li.mm-active a,
 .dark .vertical-navigation li .nav-second-level li.mm-active a {
-    color: #41b6bd;
+    color: #2a8c4a;
 }
 
 .vertical-navigation li .nav-second-level li .nav-third-level,
@@ -1100,7 +1100,7 @@ textarea.form-control {
 
 .vertical-navigation li.mm-active .nav-second-level li.mm-active .nav-third-level li.mm-active a,
 .dark .vertical-navigation li.mm-active .nav-second-level li.mm-active .nav-third-level li.mm-active a {
-    color: #41b6bd;
+    color: #2a8c4a;
 }
 
 .vertical-navigation li .nav-second-level li .nav-third-level li .nav-fourth-level li a {
@@ -1118,7 +1118,7 @@ textarea.form-control {
 
 .vertical-navigation li.mm-active .nav-second-level li.mm-active .nav-third-level li.mm-active .nav-fourth-level li.mm-active a,
 .dark .vertical-navigation li.mm-active .nav-second-level li.mm-active .nav-third-level li.mm-active .nav-fourth-level li.mm-active a {
-    color: #41b6bd;
+    color: #2a8c4a;
 }
 
 .cat-btn__wrap {
@@ -1170,7 +1170,7 @@ textarea.form-control {
 
 .dark .form-check-input:checked {
     background-color: #191e25;
-    border-color: #41b6bd;
+    border-color: #2a8c4a;
 }
 
 .form-check-input:checked[type=radio] {
@@ -1252,7 +1252,7 @@ textarea.form-control {
 }
 
 .dark .alert-primary {
-    --bs-alert-color: #41b6bd;
+    --bs-alert-color: #2a8c4a;
     --bs-alert-bg: rgba(152, 231, 24, .1);
     --bs-alert-border-color: rgba(152, 231, 24, .3);
 }
@@ -1457,7 +1457,7 @@ table.dataTable thead>tr>th.sorting_desc:after,
 table.dataTable thead>tr>td.sorting_asc:before,
 table.dataTable thead>tr>td.sorting_desc:after {
     opacity: 1;
-    color: #41b6bd;
+    color: #2a8c4a;
 }
 
 table.dataTable.table-striped>tbody>tr.odd>* {
@@ -1600,7 +1600,7 @@ div.dt-button-info {
 
 /* File Uploade */
 .ff_fileupload_wrap .ff_fileupload_dropzone {
-    border-color: #41b6bd;
+    border-color: #2a8c4a;
     border-radius: 1rem;
     background-color: transparent;
     background-size: 90px;
@@ -1611,7 +1611,7 @@ div.dt-button-info {
 .ff_fileupload_wrap .ff_fileupload_dropzone:active {
     opacity: 1;
     background-color: transparent;
-    border-color: #41b6bd;
+    border-color: #2a8c4a;
 }
 
 .fileup-sm~.ff_fileupload_wrap .ff_fileupload_dropzone {
@@ -1647,7 +1647,7 @@ div.dt-button-info {
 }
 
 .dark .ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_summary .ff_fileupload_progress_bar {
-    background-color: #41b6bd;
+    background-color: #2a8c4a;
 }
 
 .ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_summary .ff_fileupload_errors {
@@ -1677,7 +1677,7 @@ div.dt-button-info {
 .dark .custom-input-file+label:hover,
 .dark .custom-input-file.has-focus+label,
 .dark .custom-input-file:focus+label {
-    border-color: #41b6bd;
+    border-color: #2a8c4a;
 }
 
 /* Modal */
@@ -1748,9 +1748,9 @@ div.dt-button-info {
 ----------------------------------------------------------------- */
 
 .header-banner {
-    background: url(https://www.transparenttextures.com/patterns/cubes.png), -webkit-gradient(linear, left top, right top, from(rgb(248 69 37)), to(rgb(247, 183, 51)));
-    background: url(https://www.transparenttextures.com/patterns/cubes.png), -o-linear-gradient(left, rgb(248 69 37), rgb(247, 183, 51));
-    background: url(https://www.transparenttextures.com/patterns/cubes.png), linear-gradient(to right, rgb(248 69 37), rgb(247, 183, 51));
+    background: url(https://www.transparenttextures.com/patterns/cubes.png), -webkit-gradient(linear, left top, right top, from(rgb(71, 161, 71)), to(rgb(97, 199, 38)));
+    background: url(https://www.transparenttextures.com/patterns/cubes.png), -o-linear-gradient(left, rgb(71, 161, 71), rgb(97, 199, 38));
+    background: url(https://www.transparenttextures.com/patterns/cubes.png), linear-gradient(to right, rgb(71, 161, 71), rgb(97, 199, 38));
 }
 
 .header-banner-context {
@@ -1890,7 +1890,7 @@ div.dt-button-info {
 /* progress -------- */
 .progress,
 .progress-stacked {
-    --bs-progress-bar-bg: #41b6bd;
+    --bs-progress-bar-bg: #2a8c4a;
     --bs-progress-height: .4rem;
 }
 
@@ -2192,7 +2192,7 @@ div.dt-button-info {
 }
 
 .chat-list__sidebar-tabs.nav-tabs .nav-link .counts {
-    background-color: #41b6bd;
+    background-color: #2a8c4a;
     color: #fff;
     font-size: 9px;
     height: 18px;
@@ -2290,7 +2290,7 @@ div.dt-button-info {
 
 .chat-list__sidebar .chat-list__in .item-list:hover,
 .chat-list__sidebar .chat-list__in .item-list.active {
-    border-bottom-color: #41b6bd
+    border-bottom-color: #2a8c4a
 }
 
 .chat-list__sidebar .chat-list__in .avatar,
@@ -2334,7 +2334,7 @@ div.dt-button-info {
 .chat-list__sidebar .chat-list__in .item-list .status.online,
 .chat-user__info .status.online,
 .chat-panel .chat-header .online {
-    background-color: #41b6bd;
+    background-color: #2a8c4a;
 }
 
 .chat-list__sidebar .chat-list__in .item-list .status.ofline,
@@ -2911,9 +2911,9 @@ div.dt-button-info {
 }
 
 .message-content .message .text.me {
-    background: -webkit-gradient(linear, left top, right top, from(rgb(248 69 37)), to(rgb(247, 183, 51)));
-    background: -o-linear-gradient(left, rgb(248 69 37), rgb(247, 183, 51));
-    background: linear-gradient(to right, rgb(248 69 37), rgb(247, 183, 51));
+    background: -webkit-gradient(linear, left top, right top, from(rgb(71, 161, 71)), to(rgb(97, 199, 38)));
+    background: -o-linear-gradient(left, rgb(71, 161, 71), rgb(97, 199, 38));
+    background: linear-gradient(to right, rgb(71, 161, 71), rgb(97, 199, 38));
     -webkit-transition: all .3s;
     -o-transition: all .3s;
     transition: all .3s;
@@ -3287,7 +3287,7 @@ div.dt-button-info {
 }
 
 .switch input:checked+label::before {
-    background-color: #41b6bd;
+    background-color: #2a8c4a;
 }
 
 .switch input:checked+label::after {
@@ -3366,7 +3366,7 @@ div.dt-button-info {
 
 .toggler--is-active,
 .dark .toggler--is-active {
-    color: #41b6bd;
+    color: #2a8c4a;
 }
 
 .toggle {
@@ -3374,7 +3374,7 @@ div.dt-button-info {
     width: 40px;
     height: 20px;
     border-radius: 100px;
-    background-color: #41b6bd;
+    background-color: #2a8c4a;
     overflow: hidden;
     -webkit-box-shadow: inset 0 0 2px 1px rgba(0, 0, 0, 0.05);
     box-shadow: inset 0 0 2px 1px rgba(0, 0, 0, 0.05);
@@ -3474,9 +3474,9 @@ div.dt-button-info {
 
 .radio-list label span.green,
 .message-content.bg-text-green .message .text.me {
-    background: -webkit-gradient(linear, left top, right top, from(rgb(248 69 37)), to(rgb(247, 183, 51)));
-    background: -o-linear-gradient(left, rgb(248 69 37), rgb(247, 183, 51));
-    background: linear-gradient(to right, rgb(248 69 37), rgb(247, 183, 51));
+    background: -webkit-gradient(linear, left top, right top, from(rgb(71, 161, 71)), to(rgb(97, 199, 38)));
+    background: -o-linear-gradient(left, rgb(71, 161, 71), rgb(97, 199, 38));
+    background: linear-gradient(to right, rgb(71, 161, 71), rgb(97, 199, 38));
 }
 
 .radio-list label span.yellow,

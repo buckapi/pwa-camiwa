@@ -8004,7 +8004,7 @@ fieldset:disabled .btn {
 }
 .text-primary {
  --bs-text-opacity:1;
- color:#41b6bd !important
+ color:#2a8c4a !important
 }
 .text-secondary {
  --bs-text-opacity:1;
@@ -8241,7 +8241,7 @@ fieldset:disabled .btn {
 }
 .bg-primary {
  --bs-bg-opacity:1;
- background-color:#41b6bd !important
+ background-color:#2a8c4a !important
 }
 .bg-secondary {
  --bs-bg-opacity:1;
