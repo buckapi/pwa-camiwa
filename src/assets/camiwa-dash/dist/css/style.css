@@ -1748,9 +1748,9 @@ div.dt-button-info {
 ----------------------------------------------------------------- */
 
 .header-banner {
-    background: url(https://www.transparenttextures.com/patterns/cubes.png), -webkit-gradient(linear, left top, right top, from(rgb(71, 161, 71)), to(rgb(97, 199, 38)));
-    background: url(https://www.transparenttextures.com/patterns/cubes.png), -o-linear-gradient(left, rgb(71, 161, 71), rgb(97, 199, 38));
-    background: url(https://www.transparenttextures.com/patterns/cubes.png), linear-gradient(to right, rgb(71, 161, 71), rgb(97, 199, 38));
+    background: url(https://www.transparenttextures.com/patterns/cubes.png), -webkit-gradient(linear, left top, right top, from(rgb(71, 161, 71)), to(rgb(49 121 83)));
+    background: url(https://www.transparenttextures.com/patterns/cubes.png), -o-linear-gradient(left, rgb(71, 161, 71), rgb(49 121 83));
+    background: url(https://www.transparenttextures.com/patterns/cubes.png), linear-gradient(to right, rgb(71, 161, 71), rgb(49 121 83));
 }
 
 .header-banner-context {
@@ -2911,9 +2911,9 @@ div.dt-button-info {
 }
 
 .message-content .message .text.me {
-    background: -webkit-gradient(linear, left top, right top, from(rgb(71, 161, 71)), to(rgb(97, 199, 38)));
-    background: -o-linear-gradient(left, rgb(71, 161, 71), rgb(97, 199, 38));
-    background: linear-gradient(to right, rgb(71, 161, 71), rgb(97, 199, 38));
+    background: -webkit-gradient(linear, left top, right top, from(rgb(71, 161, 71)), to(rgb(49 121 83)));
+    background: -o-linear-gradient(left, rgb(71, 161, 71), rgb(49 121 83));
+    background: linear-gradient(to right, rgb(71, 161, 71), rgb(49 121 83));
     -webkit-transition: all .3s;
     -o-transition: all .3s;
     transition: all .3s;
@@ -3474,9 +3474,9 @@ div.dt-button-info {
 
 .radio-list label span.green,
 .message-content.bg-text-green .message .text.me {
-    background: -webkit-gradient(linear, left top, right top, from(rgb(71, 161, 71)), to(rgb(97, 199, 38)));
-    background: -o-linear-gradient(left, rgb(71, 161, 71), rgb(97, 199, 38));
-    background: linear-gradient(to right, rgb(71, 161, 71), rgb(97, 199, 38));
+    background: -webkit-gradient(linear, left top, right top, from(rgb(71, 161, 71)), to(rgb(49 121 83)));
+    background: -o-linear-gradient(left, rgb(71, 161, 71), rgb(49 121 83));
+    background: linear-gradient(to right, rgb(71, 161, 71), rgb(49 121 83));
 }
 
 .radio-list label span.yellow,
