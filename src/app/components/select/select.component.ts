@@ -1,21 +1,18 @@
 import { Component } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalComponent } from '../modal/modal.component';
 import { CommonModule } from '@angular/common';
 import { GlobalService } from '@app/services/global.service';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { FormsModule } from '@angular/forms';
-import { SelectComponent } from '../select/select.component';
-
 @Component({
-  selector: 'app-categories',
+  selector: 'app-select',
   standalone: true,
-  imports: [ModalComponent,CommonModule,NgMultiSelectDropDownModule,FormsModule,SelectComponent],
-  templateUrl: './categories.component.html',
-  styleUrl: './categories.component.css'
+  imports: [CommonModule,NgMultiSelectDropDownModule,FormsModule],
+  templateUrl: './select.component.html',
+  styleUrl: './select.component.css'
 })
-export class CategoriesComponent {
+export class SelectComponent {
+  idSelected=";"
   data = {
     name: "",
     categories: [] as any[],
@@ -29,23 +26,20 @@ export class CategoriesComponent {
   selectedItems = [];
 
 constructor(
-  private modalService: NgbModal,
   public global:GlobalService
 ){
   this.dropdownSettings = {
-    singleSelection: false,
+    singleSelection: true,
     idField: "id",
     textField: "name",
+    searchPlaceholderText:"Buscar",
     selectAllText: "Seleccionar todo",
     unSelectAllText: "Deseleccionar todo",
     itemsShowLimit: 3,
     allowSearchFilter: true,
   };
 }
-
-openModal() {
-  const modalRef = this.modalService.open(ModalComponent);
-  // Puedes pasar datos al modal utilizando el método 'componentInstance' del modalRef.
-  // modalRef.componentInstance.data = myData;
+onItemSelect(){
+  this.global.idCategorySelected=this.data.categories[0].id;
 }
 }

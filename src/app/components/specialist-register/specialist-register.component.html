@@ -1,0 +1,285 @@
+<div class="wrapper">
+
+    <div class="steps-area steps-area-fixed">
+        <div class="image-holder">
+            <img src="assets/specialist-register/img/side-img.jpg" alt="">
+        </div>
+        <div class="steps clearfix">
+            <ul class="tablist multisteps-form__progress">
+                <li class="multisteps-form__progress-btn js-active current" (click)="global.setStep(1)">
+                    <span>1</span>
+                </li>
+                <li class="multisteps-form__progress-btn" (click)="global.setStep(2)">
+                    <span>2</span>
+                </li>
+                <li class="multisteps-form__progress-btn" (click)="global.setStep(3)">
+                    <span>3</span>
+                </li>
+                <li class="multisteps-form__progress-btn" (click)="global.setStep(4)">
+                    <span>4</span>
+                </li>
+                <li class="multisteps-form__progress-btn last" (click)="global.setStep(5)">
+                    <span>5</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <form class="multisteps-form__form"  id="wizard" method="POST">
+        <div class="form-area position-relative">
+           
+            <div [hidden]="global.specialistRegisterStep!=1" class=" js-active" data-animation="slideHorz">
+                <div class="wizard-forms">
+                  <div class="inner pb-100 clearfix">
+                    <div class="form-content pera-content">
+                      <div class="step-inner-content">
+                        <span class="step-no">Paso 1</span>
+                        <h2>Bienvenido al portal de especialidades área de salud y bienestar. CAMIWA</h2>
+                        <p>Por favor lea cuidadosamente y llene el formulario de registro.</p>
+                        <div class="form-inner-area">
+                          <input type="text" name="full_name" class="form-control" minlength="2" placeholder="Nombre completo *" [(ngModel)]="formData.full_name">
+                          <input type="email" name="email" class="form-control" placeholder="Correo *" [(ngModel)]="formData.email">
+                          <input type="text" name="phone" class="form-control" placeholder="Teléfono" [(ngModel)]="formData.phone">
+                          <input type="text" name="address" class="form-control" placeholder="Dirección de habitación" [(ngModel)]="formData.address">
+                          <input type="text" name="consultation_address" class="form-control" placeholder="Dirección de consultorio" [(ngModel)]="formData.consultationAddress">
+                          <input type="text" name="city" class="form-control" placeholder="Ciudad" [(ngModel)]="formData.city">
+                          <input type="text" name="country" class="form-control" placeholder="País" [(ngModel)]="formData.country">
+                        </div>
+                        <div class="gender-selection">
+                          <h3>Género:</h3>
+                          <label>
+                            <input type="radio" name="gender" value="Male" [(ngModel)]="formData.gender">
+                            <span class="checkmark"></span>Masculino
+                          </label>
+                          <label>
+                            <input type="radio" name="gender" value="Female" [(ngModel)]="formData.gender">
+                            <span class="checkmark"></span>Femenino
+                          </label>
+                          <label>
+                            <input type="radio" name="gender" value="Other" [(ngModel)]="formData.gender">
+                            <span class="checkmark"></span>Otro
+                          </label>
+                        </div>
+                        <div class="upload-documents">
+                          <h3>Cargue su documento de identidad:</h3>
+                          <ngx-awesome-uploader 
+                            [adapter]="adapter" 
+                            [captions]="captions"
+                            [showPreviewContainer]="false">
+                          </ngx-awesome-uploader>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="actions">
+                    <ul>
+                      <!-- <li class="disable" aria-disabled="true"><span class="" title="NEXT" >Atrás <i class="fa fa-arrow-right"></i></span></li> -->
+                      <li><span  title="NEXT" (click)="global.setStep(2)">Siguiente <i class="fa fa-arrow-right"></i></span></li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+              
+            <!-- div 2 -->
+            <div [hidden]="global.specialistRegisterStep!=2" class="" data-animation="slideHorz">
+                <div class="wizard-forms">
+                  <div class="inner pb-100 clearfix">
+                    <div class="form-content pera-content">
+                      <div class="step-inner-content">
+                        <span class="step-no bottom-line">Paso 2</span>
+                        <div class="step-progress float-right">
+                          <span>2 de 5 completado</span>
+                          <div class="step-progress-bar">
+                            <div class="progress">
+                              <div class="progress-bar" style="width:40%"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <h2>Información profesional</h2>
+                        <div class="form-inner-area">
+                          <input type="text" name="profession" class="form-control" minlength="3" placeholder="Profesión *" [(ngModel)]="formData.profession">
+                          <input type="text" name="study_area" class="form-control" minlength="3" placeholder="Área de estudio *" [(ngModel)]="formData.studyArea">
+                          <input type="text" name="university" class="form-control" minlength="3" placeholder="Universidad de egreso *" [(ngModel)]="formData.university">
+                          <input type="text" name="graduation_year" class="form-control" minlength="3" placeholder="Año de egreso *" [(ngModel)]="formData.graduationYear">
+                        </div>
+                        <div class="language-select">
+                          <p>Seleccione la especialidad a la que pertenece: </p>
+                          <select name="specialty" [(ngModel)]="formData.specialty">
+                            <option>Especialidad</option>
+                            <option>Especialidad</option>
+                            <option>Especialidad</option>
+                            <option>Especialidad</option>
+                            <option>Especialidad</option>
+                          </select>
+                        </div>
+                        <div class="upload-documents">
+                          <h3>Cargue sus certificados:</h3>
+                          <ngx-awesome-uploader 
+                          [adapter]="adapterCertificates" 
+                          [captions]="captionsCertificates"
+                          [showPreviewContainer]="false">
+                        </ngx-awesome-uploader>
+                        </div>
+                        <div class="comment-box">
+                          <p><i class="fas fa-plus"></i> Indique los servicios que ofrece</p>
+                          <textarea name="services" placeholder="Servicios" [(ngModel)]="formData.services"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="actions">
+                    <ul>
+                      <li><span class="js-btn-prev" title="BACK" (click)="global.setStep(1)"><i class="fa fa-arrow-left"></i> Ant. </span></li>
+                      <li><span class="" title="NEXT" (click)="global.setStep(3)">Sig. <i class="fa fa-arrow-right"></i></span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+            <!-- div 3 -->
+            <div [hidden]="global.specialistRegisterStep!=3" class="" data-animation="slideHorz">
+                <div class="wizard-forms">
+                  <div class="inner pb-100 clearfix">
+                    <div class="form-content pera-content">
+                      <div class="step-inner-content">
+                        <span class="step-no bottom-line">Paso 3</span>
+                        <div class="step-progress float-right">
+                          <span>3 de 5 completado</span>
+                          <div class="step-progress-bar">
+                            <div class="progress">
+                              <div class="progress-bar" style="width:70%"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <h2>Información laboral</h2>
+                        <p>Ingrese la información necesaria para la atención de sus clientes.</p>
+                        <div class="step-content-area">
+                          <div class="budget-area">
+                            <p><i class="fas fa-clock"></i> Horarios</p>
+                            <select name="schedule" [(ngModel)]="formData.schedule">
+                              <option>Todos los días</option>
+                              <option>2 días por semana</option>
+                            </select>
+                          </div>
+                          <div class="budget-area">
+                            <div class="opti-list">
+                              <p>¿Qué días atenderá?</p>
+                              <ul class="d-flex">
+                                <li class="bg-white"><input type="checkbox" name="monday" value="LU" [(ngModel)]="formData.monday">LU</li>
+                                <li class="bg-white"><input type="checkbox" name="tuesday" value="MA" [(ngModel)]="formData.tuesday">MA</li>
+                                <li class="bg-white"><input type="checkbox" name="wednesday" value="MI" [(ngModel)]="formData.wednesday">MI</li>
+                                <li class="bg-white"><input type="checkbox" name="thursday" value="JU" [(ngModel)]="formData.thursday">JU</li>
+                                <li class="bg-white"><input type="checkbox" name="friday" value="VI" [(ngModel)]="formData.friday">VI</li>
+                                <li class="bg-white"><input type="checkbox" name="saturday" value="SA" [(ngModel)]="formData.saturday">SA</li>
+                                <li class="bg-white"><input type="checkbox" name="sunday" value="DO" [(ngModel)]="formData.sunday">DO</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="actions">
+                    <ul>
+                      <li><span class="js-btn-prev" title="BACK" (click)="global.setStep(2)"><i class="fa fa-arrow-left"></i> Ant. </span></li>
+                      <li><span class="" title="NEXT" (click)="global.setStep(4)">Sig. <i class="fa fa-arrow-right"></i></span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+            <!-- div 4 -->
+            <div [hidden]="global.specialistRegisterStep!=4" class="" data-animation="slideHorz">
+                <div class="wizard-forms">
+                  <div class="inner pb-100 clearfix">
+                    <div class="form-content pera-content">
+                      <div class="step-inner-content">
+                        <span class="step-no bottom-line">Paso 4</span>
+                        <div class="step-progress float-right">
+                          <span>4 de 5 completado</span>
+                          <div class="step-progress-bar">
+                            <div class="progress">
+                              <div class="progress-bar" style="width:100%"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <h2>Membresía</h2>
+                        <p>Información para continuar en la plataforma</p>
+                        <div class="step-content-field">
+                          <div class="plan-area">
+                            <div class="plan-icon-text text-center active">
+                              <div class="plan-icon">
+                                <i class="fas fa-chess-queen"></i>
+                              </div>
+                              <div class="plan-text">
+                                <h3>Plan ilimitado</h3>
+                                <p>Info</p>
+                                <input type="radio" name="your_plan" [(ngModel)]="formData.membership" value="Unlimited Plan" checked>
+                              </div>
+                            </div>
+                            <div class="plan-icon-text text-center">
+                              <div class="plan-icon">
+                                <i class="fas fa-cubes"></i>
+                              </div>
+                              <div class="plan-text">
+                                <h3>Plan premium</h3>
+                                <p>Info</p>
+                                <input type="radio" name="your_plan" [(ngModel)]="formData.membership" value="Premium Plan">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="budget-area">
+                            <p>¿Desea publicitar sus servicios y promociones?</p>
+                            <div class="opti-list">
+                              <ul class="d-flex">
+                                <li class="bg-white active"><input type="checkbox" name="advertise_opt1" [(ngModel)]="formData.advertiseProfile" value="En el perfil" checked>En el perfil</li>
+                                <li class="bg-white"><input type="checkbox" name="advertise_opt2" [(ngModel)]="formData.advertisePlatform" value="En el inicio de la plataforma">En el inicio de la plataforma</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="actions">
+                    <ul>
+                      <li><span class="js-btn-prev" title="BACK" (click)="global.setStep(3)"><i class="fa fa-arrow-left"></i> Ant. </span></li>
+                      <li><span class="" (click)="onSubmit()" title="NEXT">Sig. <i class="fa fa-arrow-right"></i></span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+            <!-- div 5 -->
+            <div [hidden]="global.specialistRegisterStep!=5" class="" data-animation="slideHorz">
+                <div class="wizard-forms">
+                    <div class="inner pb-100 clearfix">
+                        <div class="form-content pera-content">
+                            <div class="step-inner-content">
+                                <span class="step-no bottom-line">Paso 5</span>
+                                <div class="step-progress float-right">
+                                    <span>5 de 5 completado</span>
+                                    <div class="step-progress-bar">
+                                        <div class="progress">
+                                            <div class="progress-bar" style="width:100%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h2>Felicidades!!</h2>
+                                <p>Hemos recibido su información, comprobaremos y le haremos participe para ñla activación de su cuenta</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="actions">
+                        <ul>
+                            <li><span class="js-btn-prev" title="BACK"><i class="fa fa-arrow-left"></i> Ant. </span></li>
+                            <li><button  title="NEXT"><a href="../index.html">Fin</a> <i class="fa fa-arrow-right"></i></button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </form>
+</div>

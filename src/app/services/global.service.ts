@@ -20,6 +20,7 @@ import { environment } from '../../environments/environment';
 interface ApiResponse {
   page: number;
   perPage: number;
+  
   totalItems: number;
   totalPages: number;
   items: any[]; // Puedes ajustar el tipo de 'items' según su estructura real
@@ -41,19 +42,24 @@ interface ApiResponse {
 export class GlobalService {
   // pagesArray: number[] = [];
   public urlPrev="";
-  private categoriesUrl = 'http://localhost:8090/api/collections/category/records';
+  private categoriesUrl = 'https://db.buckapi.com:8090/api/collections/camiwaCategories/records';
+  private specialtiesUrl = 'https://db.buckapi.com:8090/api/collections/camiwaSpecialties/records';
   private productsUrl = 'https://db.buckapi.com:8090/api/collections/frutmeProducts/records';
   private doctorsUrl = environment.apiUrl+'/api/collections/doctors/records';
-  private specialtiesUrl = environment.apiUrl+'/api/collections/specialties/records';
 
   private toursUrl = 'http://localhost8070/api/collections/tours/records';
 
   private infoUrl = 'http://localhost8095/api/collections/info/records';
   private assetmentsUrl = 'http://localhost8095/api/collections/assetments/records';
   aside=true;
+  uploaderImages:string[]=[];
+  certificates:string[]=[];
 
+  newImage:boolean=false;
+  newUploaderImage:boolean=false;
+  specialistRegisterStep:number=1;
   selectedTicketsCount=0;
-
+  idCategorySelected="";
   products: any[] = [];
   doctors: any[] = [];
   specialties: any[] = [];
@@ -108,7 +114,7 @@ export class GlobalService {
   clientDetail: { clrepresentante: any }[] = [];
   intro:any='';
   unity:any='';
-
+  categorySelected:any;
   showKeyboard=false;
   comprador=false;
 
@@ -127,24 +133,29 @@ view:any=true;
     //   public dataApiService: DataApiService
   ) {
 
-// this.getCategories().subscribe(
-//     response=>{
-//       this.categories=response.items;
-//     }
-// );
-    
-this.getDoctors().subscribe(
-  response=>{
-    this.doctors=response;
-  }
+this.getCategories().subscribe(
+    response=>{
+      this.categories=response.items;
+      console.log("categorias"+JSON.stringify(this.categories))
+    }
 );
+    
+// this.getDoctors().subscribe(
+//   response=>{
+//     this.doctors=response;
+//   }
+// );
 this.getSpecialties().subscribe(
   response => {
     this.specialties = response;
   }
 );
    }
- 
+   setPreview(id:any,index:any){
+  this.idCategorySelected=id;
+  this.getSpecialties();
+  this.categorySelected=this.categories[index];
+ }
    getDoctors(): Observable<any[]> {
     this.urlPrev = this.doctorsUrl;
     return this.getAllPages(this.urlPrev).pipe(
@@ -173,11 +184,15 @@ this.getSpecialties().subscribe(
         specialties.forEach(product => categories.add(product.cat)); // Asumiendo que 'cat' es la propiedad que contiene la categoría de cada producto
         
         // Ordenar las categorías alfabéticamente
-        this.categories = Array.from(categories).sort((a, b) => a.localeCompare(b));
+        this.specialties = Array.from(categories).sort((a, b) => a.localeCompare(b));
+        this.specialties = [...this.specialties];
       })
+
     );
   }
-  
+  setStep(step:number){
+    this.specialistRegisterStep=step;
+   }
   private getAllPages(url: string, doctors: any[] = []): Observable<any[]> {
     return this.http.get<any>(url).pipe(
       switchMap((response: any) => {

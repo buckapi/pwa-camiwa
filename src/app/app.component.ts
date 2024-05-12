@@ -19,6 +19,7 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { AuthRESTService } from './services/auth-rest.service';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
+import { SpecialistRegisterComponent } from './components/specialist-register/specialist-register.component';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -38,7 +39,8 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
     SidebarDashboardComponent,
     AdminDashboardComponent,
     CategoriesComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    SpecialistRegisterComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
