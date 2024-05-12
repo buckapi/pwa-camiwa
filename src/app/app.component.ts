@@ -18,6 +18,7 @@ import { SidebarDashboardComponent } from './components/ui/sidebar-dashboard/sid
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { AuthRESTService } from './services/auth-rest.service';
 import { CategoriesComponent } from './components/categories/categories.component';
+import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -36,7 +37,8 @@ import { CategoriesComponent } from './components/categories/categories.componen
     TravLoginComponent,
     SidebarDashboardComponent,
     AdminDashboardComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    UserDashboardComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
