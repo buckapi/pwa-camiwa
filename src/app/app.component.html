@@ -1,7 +1,7 @@
 <div  [class.wrapper]="autRest.isLogin()">
     <app-header [hidden]="virtualRouter.routerActive!=='mapwrapper'"></app-header>
     <app-header-home [hidden]="virtualRouter.routerActive!=='home'"></app-header-home>
-    <app-header-dashboard [hidden]="virtualRouter.routerActive!=='dashboard' && virtualRouter.routerActive!=='categories'"></app-header-dashboard>
+    <app-header-dashboard [hidden]="virtualRouter.routerActive!=='dashboard' && virtualRouter.routerActive!=='categories' && virtualRouter.routerActive!=='requests'"></app-header-dashboard>
     <app-mapwrapper [hidden]="virtualRouter.routerActive!=='mapwrapper'"></app-mapwrapper>
     <app-home [hidden]="virtualRouter.routerActive!=='home'"></app-home>
     
@@ -9,10 +9,11 @@
     <app-trav-register [hidden]="virtualRouter.routerActive!=='trav-register'"></app-trav-register>
     <app-trav-login [hidden]="virtualRouter.routerActive!=='trav-login'"></app-trav-login>
     <app-specialist-register [hidden]="virtualRouter.routerActive!=='specialist-register'"></app-specialist-register>
-    <app-sidebar-dashboard [hidden]="virtualRouter.routerActive!=='dashboard' && virtualRouter.routerActive!=='categories'" class="sidebar"></app-sidebar-dashboard>
+    <app-sidebar-dashboard [hidden]="virtualRouter.routerActive!=='dashboard' && virtualRouter.routerActive!=='categories' && virtualRouter.routerActive!=='requests'" class="sidebar"></app-sidebar-dashboard>
     <app-admin-dashboard [hidden]="virtualRouter.routerActive!=='dashboard' " ></app-admin-dashboard>
     <app-user-dashboard [hidden]="virtualRouter.routerActive!=='dashboard' " ></app-user-dashboard>
     <app-categories [hidden]="virtualRouter.routerActive!=='categories'" ></app-categories>
+    <app-requests [hidden]="virtualRouter.routerActive!=='requests'" ></app-requests>
 </div>
 
 <!-- <app-footer></app-footer> -->

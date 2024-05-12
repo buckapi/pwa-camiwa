@@ -20,6 +20,7 @@ import { AuthRESTService } from './services/auth-rest.service';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { SpecialistRegisterComponent } from './components/specialist-register/specialist-register.component';
+import { RequestsComponent } from './components/requests/requests.component';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -40,7 +41,8 @@ import { SpecialistRegisterComponent } from './components/specialist-register/sp
     AdminDashboardComponent,
     CategoriesComponent,
     UserDashboardComponent,
-    SpecialistRegisterComponent
+    SpecialistRegisterComponent,
+    RequestsComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

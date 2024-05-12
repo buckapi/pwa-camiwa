@@ -6,19 +6,19 @@
         </div>
         <div class="steps clearfix">
             <ul class="tablist multisteps-form__progress">
-                <li class="multisteps-form__progress-btn js-active current" (click)="global.setStep(1)">
+                <li class="multisteps-form__progress-btn "  [class.js-active]="global.specialistRegisterStep === 1"  (click)="global.setStep(1)">
                     <span>1</span>
                 </li>
-                <li class="multisteps-form__progress-btn" (click)="global.setStep(2)">
+                <li class="multisteps-form__progress-btn" (click)="global.setStep(2)" [class.js-active]="global.specialistRegisterStep === 2">
                     <span>2</span>
                 </li>
-                <li class="multisteps-form__progress-btn" (click)="global.setStep(3)">
+                <li class="multisteps-form__progress-btn" (click)="global.setStep(3)" [class.js-active]="global.specialistRegisterStep === 3">
                     <span>3</span>
                 </li>
-                <li class="multisteps-form__progress-btn" (click)="global.setStep(4)">
+                <li class="multisteps-form__progress-btn" (click)="global.setStep(4)"[class.js-active]="global.specialistRegisterStep === 4">
                     <span>4</span>
                 </li>
-                <li class="multisteps-form__progress-btn last" (click)="global.setStep(5)">
+                <li class="multisteps-form__progress-btn last" (click)="global.setStep(5)"[class.js-active]="global.specialistRegisterStep === 5">
                     <span>5</span>
                 </li>
             </ul>
