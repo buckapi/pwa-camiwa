@@ -30,7 +30,7 @@
                             </td>
                             <td>{{specialist.full_name}}</td>
                             <td>{{specialist.country}}</td>
-                            <td>{{specialist.specialty}}</td>
+                            <td><span *ngFor="let specialty of specialist.specialties">{{specialty.name}}<br/></span></td>
                             <td>
                                 <div *ngIf="specialist.status === 'pending'" class="align-items-center d-flex fw-medium gap-1 text-primary fs-14">
                                     <i class="fa-circle fa-solid fs-10"></i>

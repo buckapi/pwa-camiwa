@@ -530,6 +530,22 @@ h6 {
     z-index: 1;
 }
 
+.light-overlay::after {
+    position: absolute;
+    opacity: 0.2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+    background: #fff; /* Cambiado a blanco para un overlay claro */
+}
+
+.light-overlay .overlay-content {
+    position: relative;
+    z-index: 1;
+}
+
 /* progress -------- */
 .progress,
 .progress-stacked {
@@ -1114,7 +1130,7 @@ hr {
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    content: "/";
+    content: ",";
     opacity: .5;
 }
 

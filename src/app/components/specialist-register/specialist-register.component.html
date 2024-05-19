@@ -67,6 +67,14 @@
                             [showPreviewContainer]="false">
                           </ngx-awesome-uploader>
                         </div>
+                        <div class="upload-documents">
+                          <h3>Cargue su fotografía personal:</h3>
+                          <ngx-awesome-uploader 
+                          [adapter]="adapterAvatar" 
+                          [captions]="captionsAvatar"
+                          [showPreviewContainer]="false">
+                        </ngx-awesome-uploader>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -102,14 +110,28 @@
                           <input type="text" name="graduation_year" class="form-control" minlength="3" placeholder="Año de egreso *" [(ngModel)]="formData.graduationYear">
                         </div>
                         <div class="language-select">
-                          <p>Seleccione la especialidad a la que pertenece: </p>
-                          <select name="specialty" [(ngModel)]="formData.specialty">
-                            <option>Especialidad</option>
-                            <option>Especialidad</option>
-                            <option>Especialidad</option>
-                            <option>Especialidad</option>
-                            <option>Especialidad</option>
-                          </select>
+                          <p>Seleccione la categoría de especialidad a la que pertenece: </p>
+                          <ng-multiselect-dropdown
+                          name="category"
+                          [(ngModel)]="formData.category"
+                          [data]="global.categories"
+                          [settings]="dropdownSettings"
+                          [placeholder]="'Seleccione Categoría'"
+                          [disabled]="false"
+                          [ngClass]="{'border-class': true, 'background-class': true}"
+                           (ngModelChange)="onCategoryChange($event)">
+                          </ng-multiselect-dropdown>
+                        </div>
+                        <div class="language-select" [hidden]="!global.categorySelected">
+                          <p>Seleccione la especialidad: </p>
+                          <ng-multiselect-dropdown
+                            name="specialty"
+                            [(ngModel)]="formData.specialties"
+                            [data]="global.specialtiesFiltered"
+                            [settings]="dropdownSettings"
+                            [placeholder]="'Seleccione especialidad'"
+                            [disabled]="false">
+                          </ng-multiselect-dropdown>
                         </div>
                         <div class="upload-documents">
                           <h3>Cargue sus certificados:</h3>

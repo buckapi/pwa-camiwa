@@ -136,13 +136,20 @@
             <div class="col-md-2 col-lg-2 col-xl-3 d-none d-lg-block">
                 <!-- Start Search Select -->
                 <div class="search-select has-icon position-relative">
-                    <select class="select2 form-select" aria-label="Default select example">
+                    <!-- <div class="language-select" class="select2 form-select" >
+                        <ng-multiselect-dropdown
+                          name="specialty"
+                      
+                          [data]="global.specialties"
+                          [settings]="dropdownSettings"
+                          [placeholder]="'Todas las especialidades'"
+                          [disabled]="false">
+                        </ng-multiselect-dropdown>
+                      </div> -->
+                      <select class="select2 form-select" aria-label="Default select example">
                         <option selected>Todas las especialidades</option>
-                        <option value="1">It & Development</option>
-                        <option value="2">Web & Mobile Dev</option>
-                        <option value="3">Writing</option>
-                        <option value="4">Sales & Marketing</option>
-                        <option value="5">Music & Audio</option>
+                        <option value="1" *ngFor="let sppecialty of global.specialties">{{sppecialty.name}}</option>
+                     
                     </select>
                     <!-- <i class="fa-solid fa-sack-dollar fs-18 search-icon"></i> -->
                     <svg class="form-icon-start position-absolute top-50 search-icon z-1 bi bi-app-indicator" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">

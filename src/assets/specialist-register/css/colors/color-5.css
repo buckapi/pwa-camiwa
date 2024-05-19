@@ -27,7 +27,7 @@
 .plan-icon-text:before,
 .n-activity .n-title,
 .block-option .checkbox-tick:before {
-    color: #e53f51!important;
+    color: #2a8c4a!important;
 }
 
 
@@ -47,7 +47,7 @@
 .w-service-box .option-seclect,
 .steps li.current:after,
 .steps li.checked:after {
-    background-color: #e53f51!important;
+    background-color: #2a8c4a!important;
 }
 
 
@@ -63,6 +63,6 @@
 .duration-option .d-checkbox:checked ~ .duration-box,
 .service-checkbox:checked ~ .w-service-box,
 .block-option .checked-checkbox:checked ~ .checkbox-tick:after {
-    border-color: #e53f51!important;
+    border-color: #2a8c4a!important;
 }
 
