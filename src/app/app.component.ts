@@ -21,6 +21,7 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { SpecialistRegisterComponent } from './components/specialist-register/specialist-register.component';
 import { RequestsComponent } from './components/requests/requests.component';
+import { SpecialistDetailComponent } from './components/specialist-detail/specialist-detail.component';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -42,7 +43,8 @@ import { RequestsComponent } from './components/requests/requests.component';
     CategoriesComponent,
     UserDashboardComponent,
     SpecialistRegisterComponent,
-    RequestsComponent
+    RequestsComponent,
+    SpecialistDetailComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

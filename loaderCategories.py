@@ -1,7 +1,7 @@
 import requests
 
 # URL del endpoint
-url = 'https://db.buckapi.com:8090/api/collections/camiwaCategories/records'
+url = 'https://db.camiwa.com:8092/api/collections/camiwaCategories/records'
 
 # Leer las categorías del archivo de texto
 with open('categories.txt', 'r', encoding='utf-8') as file:
@@ -13,7 +13,10 @@ categories = [category.strip() for category in categories]
 # Enviar las categorías al endpoint
 for category in categories:
     data = {
-        "name": category
+        "name": category,
+        
+
+        # "name": category
     }
     response = requests.post(url, json=data)
     

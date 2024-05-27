@@ -123,7 +123,7 @@ h6 {
 ----------------------------------------------------------------- */
 
 [data-bs-theme=dark] .text-dark {
-    color: #2a8c4a;) !important;
+    color: #2a8c4a !important;
 }
 
 /* Shadow  ----------*/
@@ -1130,7 +1130,7 @@ hr {
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    content: ",";
+    content: "/";
     opacity: .5;
 }
 
