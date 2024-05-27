@@ -1,6 +1,6 @@
-<div  [class.wrapper]="autRest.isLogin()">
+<div  [class.wrapper]="autRest.isLogin() "  *ngIf=" global.allLoaded">
     <app-header [hidden]="virtualRouter.routerActive!=='mapwrapper'"></app-header>
-    <app-header-home [hidden]="virtualRouter.routerActive!=='home'"></app-header-home>
+    <app-header-home [hidden]="virtualRouter.routerActive!=='home' "></app-header-home>
     <app-header-dashboard [hidden]="virtualRouter.routerActive!=='dashboard' && virtualRouter.routerActive!=='categories' && virtualRouter.routerActive!=='requests'"></app-header-dashboard>
     <app-mapwrapper [hidden]="virtualRouter.routerActive!=='mapwrapper'"></app-mapwrapper>
     <app-home [hidden]="virtualRouter.routerActive!=='home'"></app-home>

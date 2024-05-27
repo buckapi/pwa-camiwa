@@ -56,6 +56,7 @@ export class GlobalService {
   private assetmentsUrl =
     'http://localhost8095/api/collections/assetments/records';
   aside = true;
+  allLoaded=false;
   uploaderImages: string[] = [];
   certificates: string[] = [];
   avatar: string[] = [];

@@ -1,0 +1,14 @@
+@import url("@assets/camiwa/css/style.css");
+
+
+@import url("@assets/camiwa/plugins/aos/aos.min.css");
+@import url("@assets/camiwa/plugins/bootstrap/css/bootstrap.min.css");
+@import url("@assets/camiwa/plugins/fontawesome/css/all.min.css");
+@import url("@assets/camiwa/plugins/OwlCarousel2/css/owl.carousel.min.css");
+@import url("@assets/camiwa/plugins/OwlCarousel2/css/owl.theme.default.min.css");
+@import url("@assets/camiwa/plugins/jquery-fancyfileuploader/fancy-file-uploader/fancy_fileupload.css");
+@import url("@assets/camiwa/plugins/ion.rangeSlider/ion.rangeSlider.min.css");
+@import url("@assets/camiwa/plugins/magnific-popup/magnific-popup.css");
+@import url("@assets/camiwa/plugins/select2/select2.min.css");
+@import url("@assets/camiwa/plugins/select2-bootstrap-5/select2-bootstrap-5-theme.min.css");
+@import url("@assets/camiwa/css/style.css");

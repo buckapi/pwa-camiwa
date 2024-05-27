@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component ,ViewEncapsulation} from '@angular/core';
 import { GlobalService } from '../../services/global.service';
 import { CommonModule } from '@angular/common';
 import { virtualRouter } from '@app/services/virtualRouter.service';
@@ -9,7 +9,9 @@ import { AuthRESTService } from '@app/services/auth-rest.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
+
+  encapsulation: ViewEncapsulation.Emulated 
 })
 export class HomeComponent {
 constructor(
