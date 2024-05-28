@@ -107,7 +107,7 @@ formData: FormData = {
   friday: false,
   saturday: false,
   sunday: false,
-  membership: 'Unlimited Plan',
+  membership: 'Basic Plan',
   advertiseProfile: true,
   advertisePlatform: false
 };
@@ -145,7 +145,7 @@ formData: FormData = {
   //   friday: false,
   //   saturday: false,
   //   sunday: false,
-  //   membership: 'Unlimited Plan',
+  //   membership: 'Basic Plan',
   //   advertiseProfile: true,
   //   advertisePlatform: false
   // };
