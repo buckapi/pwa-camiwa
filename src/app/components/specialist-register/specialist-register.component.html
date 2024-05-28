@@ -186,16 +186,38 @@
                             <div class="opti-list">
                               <p>¿Qué días atenderá?</p>
                               <ul class="d-flex">
-                                <li class="bg-white"><input type="checkbox" name="monday" value="LU" [(ngModel)]="formData.monday">LU</li>
-                                <li class="bg-white"><input type="checkbox" name="tuesday" value="MA" [(ngModel)]="formData.tuesday">MA</li>
-                                <li class="bg-white"><input type="checkbox" name="wednesday" value="MI" [(ngModel)]="formData.wednesday">MI</li>
-                                <li class="bg-white"><input type="checkbox" name="thursday" value="JU" [(ngModel)]="formData.thursday">JU</li>
-                                <li class="bg-white"><input type="checkbox" name="friday" value="VI" [(ngModel)]="formData.friday">VI</li>
-                                <li class="bg-white"><input type="checkbox" name="saturday" value="SA" [(ngModel)]="formData.saturday">SA</li>
-                                <li class="bg-white"><input type="checkbox" name="sunday" value="DO" [(ngModel)]="formData.sunday">DO</li>
+                                <li class="bg-white">
+                                  <input type="checkbox" name="monday" [(ngModel)]="formData.monday" (click)="onCheckboxChange(0, $event)">
+                                  LU
+                                </li>
+                                <li class="bg-white">
+                                  <input type="checkbox" name="tuesday" [(ngModel)]="formData.tuesday" (click)="onCheckboxChange(1, $event)">
+                                  MA
+                                </li>
+                                <li class="bg-white">
+                                  <input type="checkbox" name="wednesday" [(ngModel)]="formData.wednesday" (click)="onCheckboxChange(2, $event)">
+                                  MI
+                                </li>
+                                <li class="bg-white">
+                                  <input type="checkbox" name="thursday" [(ngModel)]="formData.thursday" (click)="onCheckboxChange(3, $event)">
+                                  JU
+                                </li>
+                                <li class="bg-white">
+                                  <input type="checkbox" name="friday" [(ngModel)]="formData.friday" (click)="onCheckboxChange(4, $event)">
+                                  VI
+                                </li>
+                                <li class="bg-white">
+                                  <input type="checkbox" name="saturday" [(ngModel)]="formData.saturday" (click)="onCheckboxChange(5, $event)">
+                                  SA
+                                </li>
+                                <li class="bg-white">
+                                  <input type="checkbox" name="sunday" [(ngModel)]="formData.sunday" (click)="onCheckboxChange(6, $event)">
+                                  DO
+                                </li>
                               </ul>
                             </div>
                           </div>
+                          
                         </div>
                       </div>
                     </div>

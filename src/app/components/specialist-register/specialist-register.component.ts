@@ -12,6 +12,46 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { PocketAuthService } from '@app/services/pocket-auth.service';
 import { CommonModule } from '@angular/common';
+type Weekday = 'monday' | 'tuesday' | 'wednesday' | 'thursday' | 'friday' | 'saturday' | 'sunday';
+
+interface FormData {
+  images: string[];
+  documents: string[];
+  avatar: string[];
+  certificates: string[];
+  full_name: string;
+  email: string;
+  phone: string;
+  address: string;
+  consultationAddress: string;
+  city: string;
+  country: string;
+  gender: string;
+  profession: string;
+  studyArea: string;
+  university: string;
+  graduationYear: string;
+  specialties: any[];
+  category: string;
+  services: string;
+  availability: string;
+  days: boolean[];
+  membershipPlan: string;
+  advertiseServices: any[];
+  schedule: string;
+  status: string;
+  monday: boolean;
+  tuesday: boolean;
+  wednesday: boolean;
+  thursday: boolean;
+  friday: boolean;
+  saturday: boolean;
+  sunday: boolean;
+  membership: string;
+  advertiseProfile: boolean;
+  advertisePlatform: boolean;
+}
+
 
 @Component({
   selector: 'app-specialist-register',
@@ -34,44 +74,81 @@ export class SpecialistRegisterComponent {
     // Agrega más etiquetas según necesites
 };
 
-  
-  formData = {
-    images:[]as string[],
-    documents: [] as string[],
-    avatar: [] as string[],
-    certificates: [] as string[],
-    full_name: '',
-    email: '',
-    phone: '',
-    address: '',
-    consultationAddress: '',
-    city: '',
-    country: '',
-    gender: '',
-    profession: '',
-    studyArea: '',
-    university: '',
-    graduationYear: '',
-    specialties: [],
-    category: '',
-    services: '',
-    availability: '',
-    days: [],
-    membershipPlan: '',
-    advertiseServices: [],
-    schedule: '',
-    status: '',
-    monday: false,
-    tuesday: false,
-    wednesday: false,
-    thursday: false,
-    friday: false,
-    saturday: false,
-    sunday: false,
-    membership: 'Unlimited Plan',
-    advertiseProfile: true,
-    advertisePlatform: false
-  };
+formData: FormData = {
+  images: [],
+  documents: [],
+  avatar: [],
+  certificates: [],
+  full_name: '',
+  email: '',
+  phone: '',
+  address: '',
+  consultationAddress: '',
+  city: '',
+  country: '',
+  gender: '',
+  profession: '',
+  studyArea: '',
+  university: '',
+  graduationYear: '',
+  specialties: [],
+  category: '',
+  services: '',
+  availability: '',
+  days: [],
+  membershipPlan: '',
+  advertiseServices: [],
+  schedule: '',
+  status: '',
+  monday: false,
+  tuesday: false,
+  wednesday: false,
+  thursday: false,
+  friday: false,
+  saturday: false,
+  sunday: false,
+  membership: 'Unlimited Plan',
+  advertiseProfile: true,
+  advertisePlatform: false
+};
+
+  // formData = {
+  //   images:[]as string[],
+  //   documents: [] as string[],
+  //   avatar: [] as string[],
+  //   certificates: [] as string[],
+  //   full_name: '',
+  //   email: '',
+  //   phone: '',
+  //   address: '',
+  //   consultationAddress: '',
+  //   city: '',
+  //   country: '',
+  //   gender: '',
+  //   profession: '',
+  //   studyArea: '',
+  //   university: '',
+  //   graduationYear: '',
+  //   specialties: [],
+  //   category: '',
+  //   services: '',
+  //   availability: '',
+  //   days: [],
+  //   membershipPlan: '',
+  //   advertiseServices: [],
+  //   schedule: '',
+  //   status: '',
+  //   monday: false,
+  //   tuesday: false,
+  //   wednesday: false,
+  //   thursday: false,
+  //   friday: false,
+  //   saturday: false,
+  //   sunday: false,
+  //   membership: 'Unlimited Plan',
+  //   advertiseProfile: true,
+  //   advertisePlatform: false
+  // };
   public captions: UploaderCaptions = {
     dropzone: {
       title: '10 MB máx.',
@@ -143,8 +220,14 @@ export class SpecialistRegisterComponent {
     public http:HttpClient,
     private renderer: Renderer2
   ) { }
-  onCheckboxChange(day: string, isChecked: boolean): void {
-    console.log(`${day} is now ${isChecked ? 'checked' : 'unchecked'}`);
+  // onCheckboxChange(day: string, isChecked: boolean): void {
+  //   console.log(`${day} is now ${isChecked ? 'checked' : 'unchecked'}`);
+  // }
+  onCheckboxChange(day: number, event: Event): void {
+    console.log(day)
+    const input = event.target as HTMLInputElement;
+    this.formData.days[day] = input.checked;
+    console.log(`${day} is now ${input.checked ? 'checked' : 'unchecked'}`);
   }
   onCategoryChange(selectedCategory: any): void {
     if (selectedCategory) {
