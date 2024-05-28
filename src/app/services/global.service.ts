@@ -74,6 +74,7 @@ viewSelected="list";
   specialtiesFiltered: any[] = [];
   categorySelected: any = false;
   specialists: any[] = [];
+  specialistsUnlimited: any[] = [];
 
   car: any[] = [];
   categoryPrev: { nameCategory: string; image: string; subCategory: any[] } = {
@@ -177,6 +178,16 @@ viewSelected="list";
     });
     this.getSpecialists().subscribe((response) => {
       this.specialists = response.items;
+      this.specialistsUnlimited=[];
+      let size =this.specialists.length;
+
+      for (let i = 0; i < size; i++) {  // Corrección aquí: 'i < size'
+        console.log("membership " + this.specialists[i].membership);
+    
+        if (this.specialists[i].membership === "Unlimited Plan") {
+          this.specialistsUnlimited.push(this.specialists[i]);
+        }
+      }
       console.log('specialists' + JSON.stringify(this.specialists));
     });
 

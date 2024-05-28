@@ -1,0 +1,10 @@
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'filterUnlimitedPlan'
+})
+export class FilterUnlimitedPlanPipe implements PipeTransform {
+  transform(specialists: any[]): any[] {
+    return specialists.filter(specialist => specialist.membership === 'Unlimited Plan');
+  }
+}
