@@ -1,6 +1,7 @@
 <div  [class.wrapper]="autRest.isLogin() "  *ngIf=" global.allLoaded">
     <app-header [hidden]="virtualRouter.routerActive!=='mapwrapper'"></app-header>
-    <app-about-header [hidden]="virtualRouter.routerActive!=='about'"></app-about-header>
+    <app-about-header [hidden]="virtualRouter.routerActive!=='about' "></app-about-header>
+    <app-contact-header [hidden]="virtualRouter.routerActive!=='contact' "></app-contact-header>
     <app-header-home [hidden]="virtualRouter.routerActive!=='home' "></app-header-home>
     <app-header-dashboard [hidden]="virtualRouter.routerActive!=='dashboard' && virtualRouter.routerActive!=='categories' && virtualRouter.routerActive!=='requests'"></app-header-dashboard>
     <app-mapwrapper [hidden]="virtualRouter.routerActive!=='mapwrapper'"></app-mapwrapper>
@@ -16,6 +17,7 @@
     <app-categories [hidden]="virtualRouter.routerActive!=='categories'" ></app-categories>
     <app-requests [hidden]="virtualRouter.routerActive!=='requests'" ></app-requests>
     <app-about [hidden]="virtualRouter.routerActive!=='about'" ></app-about>
+    <app-contact [hidden]="virtualRouter.routerActive!=='contact'" ></app-contact>
     <app-specialist-detail [hidden]="virtualRouter.routerActive!=='specialist-detail'" ></app-specialist-detail>
 </div>
 

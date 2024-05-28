@@ -24,6 +24,8 @@ import { RequestsComponent } from './components/requests/requests.component';
 import { SpecialistDetailComponent } from './components/specialist-detail/specialist-detail.component';
 import { AboutComponent } from './components/about/about.component';
 import { AboutHeaderComponent } from './components/ui/about-header/about-header.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { ContactHeaderComponent } from './components/ui/contact-header/contact-header.component';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -48,8 +50,9 @@ import { AboutHeaderComponent } from './components/ui/about-header/about-header.
     RequestsComponent,
     SpecialistDetailComponent,
     AboutComponent,
-    AboutHeaderComponent
-  ],
+    AboutHeaderComponent,
+    ContactComponent,
+  ContactHeaderComponent  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
