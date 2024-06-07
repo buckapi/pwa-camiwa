@@ -11,10 +11,14 @@ import { GlobalService } from '@app/services/global.service';
   styleUrl: './admin-dashboard.component.css'
 })
 export class AdminDashboardComponent {
-constructor(
-  public autRest:AuthRESTService,
-  public global:GlobalService
-){
 
+  constructor(
+    public autRest:AuthRESTService,
+    public global:GlobalService
+    ){
+      this.updateApprovedSpecialistsCount();
+}
+updateApprovedSpecialistsCount() {
+  this.global.approvedSpecialistsCount = this.global.countApprovedSpecialists();
 }
 }

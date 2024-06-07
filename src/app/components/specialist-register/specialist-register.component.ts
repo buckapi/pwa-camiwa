@@ -276,13 +276,13 @@ formData: FormData = {
   }
   ngOnInit(): void {
     this.loadExternalScripts([
-      'assets/specilist-register/js/jquery-3.3.1.min.js',
-      'assets/specilist-register/js/main.js',
-      'assets/specilist-register/js/jquery.validate.min.js',
+      'assets/specialist-register/js/jquery-3.3.1.min.js',
+      'assets/specialist-register/js/main.js',
+      'assets/specialist-register/js/jquery.validate.min.js',
       'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js',
-      'assets/specilist-register/js/bootstrap.min.js',
-      'assets/specilist-register/js/conditionize.flexible.jquery.min.js',
-      'assets/specilist-register/js/switch.js'
+      'assets/specialist-register/js/bootstrap.min.js',
+      'assets/specialist-register/js/conditionize.flexible.jquery.min.js',
+      'assets/specialist-register/js/switch.js'
     ]);
   }
 

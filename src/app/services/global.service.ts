@@ -63,6 +63,7 @@ totalRequests=0;
   newUploaderAvatar: boolean = false;
   specialistRegisterStep: number = 1;
   selectedTicketsCount = 0;
+  approvedSpecialistsCount = 0;
   idCategorySelected = '';
   products: any[] = [];
   doctors: any[] = [];
@@ -264,6 +265,7 @@ this.viewSelected=view;
   public updateSpecialistsList() {
     this.getSpecialists().subscribe((response) => {
       this.specialists = response.items;
+      this.approvedSpecialistsCount=this.countApprovedSpecialists();
       this.specialistsUnlimited = [];
       this.totalRequests = 0;
 
@@ -395,44 +397,11 @@ this.viewSelected=view;
     this.virtuallRouter.routerActive = route;
   }
   classifyOrders() {
-    // this.yeoman.ordersNew = [];
-    // this.yeoman.ordersProcessing = [];
-    // this.yeoman.ordersFinished = [];
-    // for (const order of this.yeoman.myOrders) {
-    //   if (order.status === 'nueva') {
-    //     this.yeoman.ordersNew.push(order);
-    //   } else if (order.status === 'procesando') {
-    //     this.yeoman.ordersProcessing.push(order);
-    //   } else if (order.status === 'terminada') {
-    //     this.yeoman.ordersFinished.push(order);
-    //   }
-    // }
-    // this.cdr.detectChanges();
+
   }
-  //   findClient() {
-  //     const idFind = this.authRESTService.getCurrentUser().id;
-  //     if (idFind !== undefined) {
-  //       this.dataApiService.getClientBy(idFind).subscribe((res: any) => {
-  //         localStorage.setItem('clientCard', JSON.stringify(res[0]));
-  //         let clientString = localStorage.getItem('clientCard');
-  //         if (clientString !== null) {
-  //           let clientCard = JSON.parse(clientString);
-  //           if (clientCard.status == "active") {
-  //             const idClient = clientCard.idUser;
-  //             const idDist = clientCard.ref;
-  //             this.yeoman.idClient = idClient;
-  //             this.yeoman.client = clientCard;
-  //             this.yeoman.clientEmail = clientCard.email;
-  //             this.yeoman.idDist = idDist;
-  //             this.getOrdersByClient();
-  //             this.findDist2(clientCard.ref);
-  //           } else {
-  //             // this.router.navigate(['/unavailable']);
-  //           }
-  //         }
-  //       });
-  //     }
-  //   }
+  countApprovedSpecialists(): number {
+    return this.specialists.filter(specialist => specialist.status === 'approved').length;
+  }
   ClientFicha(): any {
     let client_string = localStorage.getItem('clientFicha');
     if (client_string) {

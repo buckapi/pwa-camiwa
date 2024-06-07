@@ -26,6 +26,7 @@ import { AboutComponent } from './components/about/about.component';
 import { AboutHeaderComponent } from './components/ui/about-header/about-header.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ContactHeaderComponent } from './components/ui/contact-header/contact-header.component';
+import { SpecialistsComponent } from './components/specialists/specialists.component';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -51,6 +52,7 @@ import { ContactHeaderComponent } from './components/ui/contact-header/contact-h
     SpecialistDetailComponent,
     AboutComponent,
     AboutHeaderComponent,
+    SpecialistsComponent,
     ContactComponent,
   ContactHeaderComponent  ],
   templateUrl: './app.component.html',
@@ -82,9 +84,9 @@ export class AppComponent {
     'ion.rangeSlider',
     'magnific-popup',
     'select2',
-    'google-maps',
+    // 'google-maps',
     'custom-script',
-    'listing-map',
+    // 'listing-map',
     'metisMenu', 
     'perfect', 
     'app', 
