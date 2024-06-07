@@ -3,7 +3,7 @@ import { GlobalService } from '../../services/global.service';
 import { CommonModule } from '@angular/common';
 import { virtualRouter } from '@app/services/virtualRouter.service';
 import { AuthRESTService } from '@app/services/auth-rest.service';
-import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
+// import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import Swiper from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -65,36 +65,36 @@ constructor(
     this.global.setRoute("dashboard")
   }
 }
-ngAfterViewInit() {
-  new Swiper('.swiper-container', {
+  ngAfterViewInit() {
+    new Swiper('.swiper-container', {
 
-      slidesPerView: 1,
-      spaceBetween: 10,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        // when window width is >= 640px
-        640: {
-          slidesPerView: 2,
-          spaceBetween: 20,
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
         },
-        // when window width is >= 768px
-        768: {
-          slidesPerView: 3,
-          spaceBetween: 30,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
         },
-        // when window width is >= 1024px
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 40,
+        breakpoints: {
+          // when window width is >= 640px
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          // when window width is >= 768px
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          // when window width is >= 1024px
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
         },
-      },
-    });
-}
+      });
+  }
 }

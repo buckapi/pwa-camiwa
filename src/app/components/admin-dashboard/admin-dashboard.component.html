@@ -55,23 +55,25 @@
                             <div class="card flex-column flex-fill p-4 position-relative shadow w-100 widget-card">
                                 <div class="d-flex">
                                     <div class="flex-grow-1 ms-3">
-                                        <div class="fs-14 text-muted">DB Nivel </div>
+                                        <div class="fs-14 text-muted">Especialistas </div>
                                         <h3 class="fw-semi-bold mb-0">13%</h3>
                                     </div>
                                     <div class="flex-shrink-0">
-                                        <img src="assets/camiwa-dash/dist/img/sales-performance-v2.png" alt="">
+                                        <img src="assets/camiwa-dash/dist/img/members.png" alt="">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3 d-flex">
-                            <div (click)="global.setRoute('requests')" class="card flex-column flex-fill p-4 position-relative shadow w-100 widget-card" style="    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5) !important; /* Resplandor verde al pasar el mouse */
-                            ">
+                        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3 d-flex" >
+                            <div (click)="global.setRoute('requests')" 
+                            class="card flex-column flex-fill p-4 position-relative shadow w-100 widget-card"
+                            [ngClass]="{'highlight': global.totalRequests > 0}">
+                       
                                 <div class="d-flex">
                                     <div class="flex-grow-1 ms-3">
                                         <div class="fs-14 text-muted">Solicitudes </div>
-                                        <h3 class="fw-semi-bold mb-0 " [hidden]="global.specialists.length>0"> 0</h3>
-                                        <h3 class="fw-semi-bold mb-0 " [hidden]="global.specialists.length<1"> {{global.specialists.length}}</h3>
+                                        <h3 class="fw-semi-bold mb-0 " [hidden]="global.totalRequests>0"> 0</h3>
+                                        <h3 class="fw-semi-bold mb-0 " [hidden]="global.totalRequests<1"> {{global.totalRequests}}</h3>
                                     </div>
                                     <div class="flex-shrink-0">
                                         <img src="assets/camiwa-dash/dist/img/new.png" alt="">

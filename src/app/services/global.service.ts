@@ -1,11 +1,6 @@
 import { Injectable } from '@angular/core';
-// import { Butler } from "@services/butler.service";
-// import { Yeoman } from './yeoman.service';
-// import { DataApiService } from './data-api-service';
-// import { virtualRouter } from './virtualRouter.service';
-// import { AuthRESTService } from './auth-rest.service';
-// import { Catalogo } from './catalogo.service';
 import { tap, count, map } from 'rxjs/operators';
+import PocketBase from 'pocketbase';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
@@ -62,6 +57,7 @@ export class GlobalService {
   avatar: string[] = [];
   categoryCounts: { [key: string]: number } = {};
 viewSelected="list";
+totalRequests=0;
   newImage: boolean = false;
   newUploaderImage: boolean = false;
   newUploaderAvatar: boolean = false;
@@ -142,6 +138,7 @@ viewSelected="list";
   indicePre: any = '';
   selectedView: any = 'grid';
   view: any = true;
+  private pb = new PocketBase('https://db.buckapi.com:8090');
   constructor(
     //   private apollo: Apollo,
     //   public catalogo: Catalogo,
@@ -152,55 +149,35 @@ viewSelected="list";
   ) //   public yeoman: Yeoman,
   //   public dataApiService: DataApiService
   {
+    this.initializeRealtime();
     this.getCategories().subscribe((response) => {
       this.categories = response.items;
-      console.log('Categorías:', JSON.stringify(this.categories));
-
-      // Inicializar el contador para cada categoría
       this.categories.forEach(category => {
         this.categoryCounts[category.id] = 0;
       });
 
       this.getSpecialties().subscribe((response) => {
         this.specialties = response;
-        console.log('Especialidades:', JSON.stringify(this.specialties));
-
-        // Contar las especialidades para cada categoría
         this.specialties.forEach(specialty => {
           if (this.categoryCounts[specialty.fatherId] !== undefined) {
             this.categoryCounts[specialty.fatherId]++;
           }
         });
-
-        // Mostrar los contadores por consola
-        console.log('Contadores de especialidades por categoría:', JSON.stringify(this.categoryCounts));
       });
     });
-    this.getSpecialists().subscribe((response) => {
-      this.specialists = response.items;
-      this.specialistsUnlimited=[];
-      let size =this.specialists.length;
 
-      for (let i = 0; i < size; i++) {  // Corrección aquí: 'i < size'
-        console.log("membership " + this.specialists[i].membership);
-    
-        if (this.specialists[i].membership === "Unlimited Plan") {
-          this.specialistsUnlimited.push(this.specialists[i]);
-        }
-      }
-      console.log('specialists' + JSON.stringify(this.specialists));
-    });
-
-    // this.getDoctors().subscribe(
-    //   response=>{
-    //     this.doctors=response;
-    //   }
-    // );
+    this.updateSpecialistsList();
  
   }
   setView(view:string){
 this.viewSelected=view;
   }
+
+  approveSpecialist(id: string): Observable<any> {
+    const data = { status: 'approved' };
+    return this.http.patch<any>(`${this.specialistsUrl}/${id}`, data);
+  }
+
   setPreview(id: any, index: any) {
     this.idCategorySelected = id;
     this.getSpecialties();
@@ -283,12 +260,64 @@ this.viewSelected=view;
     return organizedDoctors;
   }
 
+
+  public updateSpecialistsList() {
+    this.getSpecialists().subscribe((response) => {
+      this.specialists = response.items;
+      this.specialistsUnlimited = [];
+      this.totalRequests = 0;
+
+      let size = this.specialists.length;
+      for (let i = 0; i < size; i++) {
+        if (this.specialists[i].membership === "Unlimited Plan") {
+          this.specialistsUnlimited.push(this.specialists[i]);
+        }
+
+        if (this.specialists[i].status === "pending") {
+          this.totalRequests++;
+        }
+      }
+    });
+  }
+
   getTotalAmount() {
     const selectedTicketsCount = Object.keys(this.mySelection).length;
     const ticketPrice = this.previewCard.ticketPrice;
 
     return selectedTicketsCount * ticketPrice;
   }
+  private initializeRealtime() {
+    // Subscribe to real-time updates
+    this.pb.collection('camiwaSpecialists').subscribe('*', (e) => {
+      this.updateSpecialistsList();
+    });
+
+    // Initial load of specialists
+    this.updateSpecialistsList();
+  }
+  public handleRealtimeUpdate(event: any) {
+    const record = event.record;
+
+    switch (event.action) {
+      case 'create':
+        this.specialists.push(record);
+        break;
+      case 'update':
+        const index = this.specialists.findIndex(s => s.id === record.id);
+        if (index !== -1) {
+          this.specialists[index] = record;
+        }
+        break;
+      case 'delete':
+        this.specialists = this.specialists.filter(s => s.id !== record.id);
+        break;
+    }
+    this.updateTotalRequests();
+  }
+  private updateTotalRequests() {
+    this.totalRequests = this.specialists.filter(s => s.status === 'pending').length;
+  }
+
 
   select(i: any) {
     // Verifica si el elemento ya está presente en global.mySelection
