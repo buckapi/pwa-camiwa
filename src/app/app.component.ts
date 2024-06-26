@@ -46,6 +46,7 @@ import { SpecialistsComponent } from './components/specialists/specialists.compo
     SidebarDashboardComponent,
     AdminDashboardComponent,
     CategoriesComponent,
+    SpecialistsComponent,
     UserDashboardComponent,
     SpecialistRegisterComponent,
     RequestsComponent,
@@ -54,6 +55,7 @@ import { SpecialistsComponent } from './components/specialists/specialists.compo
     AboutHeaderComponent,
     SpecialistsComponent,
     ContactComponent,
+    SpecialistDetailComponent,
   ContactHeaderComponent  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

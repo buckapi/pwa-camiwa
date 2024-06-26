@@ -12,6 +12,7 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { PocketAuthService } from '@app/services/pocket-auth.service';
 import { CommonModule } from '@angular/common';
+import { virtualRouter } from '@app/services/virtualRouter.service';
 type Weekday = 'monday' | 'tuesday' | 'wednesday' | 'thursday' | 'friday' | 'saturday' | 'sunday';
 
 interface FormData {
@@ -95,11 +96,19 @@ formData: FormData = {
   category: '',
   services: '',
   availability: '',
-  days: [],
+  monday: true,
+    tuesday: false,
+    wednesday: false,
+    thursday: false,
+    friday: false,
+    saturday: false,
+    sunday: false,
+    days: Array(7).fill(true),
   membershipPlan: '',
   advertiseServices: [],
   schedule: '',
   status: '',
+<<<<<<< HEAD
   monday: false,
   tuesday: false,
   wednesday: false,
@@ -108,6 +117,10 @@ formData: FormData = {
   saturday: false,
   sunday: false,
   membership: 'Basic Plan',
+=======
+
+  membership: 'Unlimited Plan',
+>>>>>>> f06b295 (fase 2 add)
   advertiseProfile: true,
   advertisePlatform: false
 };
@@ -218,17 +231,24 @@ formData: FormData = {
     public global:GlobalService,
     public pocketAuthService:PocketAuthService,
     public http:HttpClient,
+    public virtualRouter:virtualRouter,
     private renderer: Renderer2
   ) { }
   // onCheckboxChange(day: string, isChecked: boolean): void {
   //   console.log(`${day} is now ${isChecked ? 'checked' : 'unchecked'}`);
   // }
+
   onCheckboxChange(day: number, event: Event): void {
-    console.log(day)
     const input = event.target as HTMLInputElement;
     this.formData.days[day] = input.checked;
     console.log(`${day} is now ${input.checked ? 'checked' : 'unchecked'}`);
   }
+  // onCheckboxChange(day: number, event: Event): void {
+  //   console.log(day)
+  //   const input = event.target as HTMLInputElement;
+  //   this.formData.days[day] = input.checked;
+  //   console.log(`${day} is now ${input.checked ? 'checked' : 'unchecked'}`);
+  // }
   onCategoryChange(selectedCategory: any): void {
     if (selectedCategory) {
         console.log("seleecionada: "+JSON.stringify(selectedCategory));
@@ -264,10 +284,43 @@ formData: FormData = {
 
     this.http.post(url, this.formData, { headers })
       .subscribe(
-        response => {
-          console.log('Respuesta del servidor:', response);
+        data => {
+          console.log('Respuesta del servidor:', data);
+          console.log('Registro exitoso', data);
+    let type = 'specialist'; // Esto debería ser 'employee' si es un empleado
+
+          // Setear el usuario y el token
+          this.pocketAuthService.setUser(data);
+          // this.pocketAuthService.setToken(data.token);
+          // Establecer que el usuario ha iniciado sesión
+          localStorage.setItem('isLoggedin', 'true');
+          // Establecer el tipo de usuario
+          localStorage.setItem('type', type);
+           this.global.setStep(2);
+          // Redirigir al usuario según el tipo de usuario registrado
+          switch (type) {
+            case 'admin':
+              this.virtualRouter.routerActive = 'admin-home';
+              break;
+            case 'specialist':
+              this.renderer.setAttribute(
+                document.body,
+                'class',
+                'fixed sidebar-mini sidebar-collapse'
+              );
+  
+              this.virtualRouter.routerActive = 'dashboard';
+              break;
+            case 'visit':
+              this.virtualRouter.routerActive = 'dashboard';
+              break;
+            default:
+              console.error('Tipo de usuario no reconocido');
+          }
+          this.global.setRoute('dashboard');
+        },   
           // Realiza cualquier otra acción necesaria después de enviar los datos
-        },
+        
         error => {
           console.error('Error al enviar los datos:', error);
           // Maneja el error adecuadamente

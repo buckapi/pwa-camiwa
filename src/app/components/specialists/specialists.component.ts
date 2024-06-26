@@ -5,15 +5,28 @@ import { Component } from '@angular/core';
 import { GlobalService } from '@app/services/global.service';
 import { virtualRouter } from '@app/services/virtualRouter.service';
 import Swal from 'sweetalert2';
+<<<<<<< HEAD
 @Component({
   selector: 'app-specialists',
   standalone: true,
   imports: [CommonModule],
+=======
+import { PopDetailComponent } from '../pop-detail/pop-detail.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+@Component({
+  selector: 'app-specialists',
+  standalone: true,
+  imports: [CommonModule,PopDetailComponent],
+>>>>>>> f06b295 (fase 2 add)
   templateUrl: './specialists.component.html',
   styleUrl: './specialists.component.css'
 })
 export class SpecialistsComponent {
   constructor(
+<<<<<<< HEAD
+=======
+    private modalService: NgbModal,
+>>>>>>> f06b295 (fase 2 add)
     public global:GlobalService,
     public http:HttpClient,
     public virtualRouter:virtualRouter
@@ -83,5 +96,17 @@ export class SpecialistsComponent {
       }
     });
   }
+<<<<<<< HEAD
 
 }
+=======
+  openModal(specialist:any) {
+    this.global.previewRequest=specialist;
+    this.global.modalType='view';
+
+    const modalRef = this.modalService.open(PopDetailComponent);
+    // Puedes pasar datos al modal utilizando el método 'componentInstance' del modalRef.
+    // modalRef.componentInstance.data = myData;
+  }
+}
+>>>>>>> f06b295 (fase 2 add)

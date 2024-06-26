@@ -982,7 +982,6 @@ select.form-control option[value=""][disabled] {
 .step-content-area {
   padding-top: 55px;
 }
-
 .budget-area {
   margin-bottom: 25px;
 }
@@ -1000,6 +999,8 @@ select.form-control option[value=""][disabled] {
 }
 .budget-area .opti-list ul {
   margin-top: 10px;
+  padding: 0;
+  list-style: none;
 }
 .budget-area .opti-list li {
   position: relative;
@@ -1012,26 +1013,20 @@ select.form-control option[value=""][disabled] {
   font-weight: 600;
   cursor: pointer;
   border: 2px solid #ededed;
+  background-color: white; /* Asegurar fondo blanco */
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 .budget-area .opti-list li:last-child {
   margin-right: 0;
 }
 .budget-area .opti-list li input {
-  opacity: 0;
+  opacity: 100;
   position: absolute;
   left: 15px;
   top: 20px;
   width: 28px;
   height: 28px;
-}
-.budget-area .opti-list li:after {
-  content: "";
-  position: absolute;
-  height: 28px;
-  left: 15px;
-  top: 20px;
-  width: 28px;
-  border: 2px solid #ededed;
+  cursor: pointer;
 }
 .budget-area .opti-list li:before {
   content: "";
@@ -1048,8 +1043,7 @@ select.form-control option[value=""][disabled] {
 }
 .budget-area .opti-list li.active {
   border: 2px solid #44b678;
-  -webkit-box-shadow: 0 0 15px 5px #6b58d317;
-          box-shadow: 0 0 15px 5px #6b58d317;
+  box-shadow: 0 0 15px 5px #6b58d317;
 }
 .budget-area .opti-list li.active:after {
   border: 2px solid #44b678;
@@ -1058,6 +1052,11 @@ select.form-control option[value=""][disabled] {
 .budget-area .opti-list li.active:before {
   display: block;
 }
+.budget-area .opti-list li:hover {
+  border-color: #44b678;
+  box-shadow: 0 0 15px 5px #6b58d317;
+}
+
 
 .step-inner-content {
   border-bottom: none;

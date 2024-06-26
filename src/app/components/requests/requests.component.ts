@@ -5,15 +5,24 @@ import { Component } from '@angular/core';
 import { GlobalService } from '@app/services/global.service';
 import { virtualRouter } from '@app/services/virtualRouter.service';
 import Swal from 'sweetalert2';
+<<<<<<< HEAD
+=======
+import { PopDetailComponent } from '../pop-detail/pop-detail.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+>>>>>>> f06b295 (fase 2 add)
 @Component({
   selector: 'app-requests',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,PopDetailComponent],
   templateUrl: './requests.component.html',
   styleUrl: './requests.component.css'
 })
 export class RequestsComponent {
   constructor(
+<<<<<<< HEAD
+=======
+    private modalService: NgbModal,
+>>>>>>> f06b295 (fase 2 add)
     public global:GlobalService,
     public http:HttpClient,
     public virtualRouter:virtualRouter
@@ -24,6 +33,16 @@ export class RequestsComponent {
   
     return typeof url === 'string' && url !== '' && imageRegex.test(url);
   }
+<<<<<<< HEAD
+=======
+  openModal(specialist:any) {
+    this.global.modalType='request';
+    this.global.previewRequest=specialist;
+    const modalRef = this.modalService.open(PopDetailComponent);
+    // Puedes pasar datos al modal utilizando el método 'componentInstance' del modalRef.
+    // modalRef.componentInstance.data = myData;
+  }
+>>>>>>> f06b295 (fase 2 add)
   showAlert(recordId: string) {
     Swal.fire({
       title: '¿Estás seguro?',
@@ -83,5 +102,8 @@ export class RequestsComponent {
       }
     });
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> f06b295 (fase 2 add)
 }

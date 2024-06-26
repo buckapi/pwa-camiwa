@@ -14,4 +14,8 @@ export class MapwrapperComponent {
 constructor(
   public global: GlobalService,
 ){}
+viewDetail(specialist:any){
+  this.global.previewRequest=specialist;
+  this.global.setRoute('specialistdetail')
+}
 }

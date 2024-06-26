@@ -29,7 +29,7 @@
                                 <div class="d-flex">
                                     <div class="flex-grow-1 ms-3">
                                         <div class="fs-14 text-muted">Viajeros</div>
-                                        <h3 class="fw-semi-bold mb-0">3006</h3>
+                                        <h3 class="fw-semi-bold mb-0">{{global.travelers.length}}</h3>
                                     </div>
                                     <div class="flex-shrink-0">
                                         <img src="assets/camiwa-dash/dist/img/graph-v1.png" alt="">
@@ -73,8 +73,12 @@
                                     <div class="flex-grow-1 ms-3">
                                         <div class="fs-14 text-muted">Solicitudes </div>
                                         <h3 class="fw-semi-bold mb-0 " [hidden]="global.totalRequests>0"> 0</h3>
+<<<<<<< HEAD
                                         <h3 class="fw-semi-bold mb-0 " [hidden]="global.totalRequests<1"> {{global.totalRequests}}</h3>
                                     </div>
+=======
+                                        <h3 class="fw-semi-bold mb-0 " [hidden]="global.totalRequests<1"> {{global.totalRequests}}</h3>   </div>
+>>>>>>> f06b295 (fase 2 add)
                                     <div class="flex-shrink-0">
                                         <img src="assets/camiwa-dash/dist/img/new.png" alt="">
                                     </div>

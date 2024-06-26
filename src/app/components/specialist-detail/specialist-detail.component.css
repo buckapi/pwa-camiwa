@@ -1,1 +1,15 @@
 @import url("@assets/camiwa/css/style.css");
+.back-button {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem; /* Ajusta el tamaño de la fuente según sea necesario */
+    font-weight: 600;  /* Similar a fw-semibold */
+    cursor: pointer;
+    color: inherit;    /* Hereda el color del texto del entorno */
+}
+
+.arrow-left {
+    margin-right: 0.5rem; /* Espacio entre la flecha y el texto */
+}

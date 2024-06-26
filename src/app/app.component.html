@@ -3,7 +3,11 @@
     <app-about-header [hidden]="virtualRouter.routerActive!=='about' "></app-about-header>
     <app-contact-header [hidden]="virtualRouter.routerActive!=='contact' "></app-contact-header>
     <app-header-home [hidden]="virtualRouter.routerActive!=='home' "></app-header-home>
+<<<<<<< HEAD
     <app-header-dashboard [hidden]="virtualRouter.routerActive!=='dashboard' && virtualRouter.routerActive!=='categories'  && virtualRouter.routerActive!=='requests' && virtualRouter.routerActive!=='specialists'"></app-header-dashboard>
+=======
+    <app-header-dashboard [hidden]="virtualRouter.routerActive!=='dashboard' && virtualRouter.routerActive!=='categories'  && virtualRouter.routerActive!=='requests' && virtualRouter.routerActive!=='specialists' && virtualRouter.routerActive!=='specialistdetail'"></app-header-dashboard>
+>>>>>>> f06b295 (fase 2 add)
     <app-mapwrapper [hidden]="virtualRouter.routerActive!=='mapwrapper'"></app-mapwrapper>
     <app-home [hidden]="virtualRouter.routerActive!=='home'"></app-home>
     
@@ -11,7 +15,12 @@
     <app-trav-register [hidden]="virtualRouter.routerActive!=='trav-register'"></app-trav-register>
     <app-trav-login [hidden]="virtualRouter.routerActive!=='trav-login'"></app-trav-login>
     <app-specialist-register [hidden]="virtualRouter.routerActive!=='specialist-register'"></app-specialist-register>
+<<<<<<< HEAD
     <app-sidebar-dashboard [hidden]="virtualRouter.routerActive!=='dashboard' && virtualRouter.routerActive!=='categories'  && virtualRouter.routerActive!=='requests' && virtualRouter.routerActive!=='specialists'" class="sidebar"></app-sidebar-dashboard>
+=======
+    <app-sidebar-dashboard [hidden]="virtualRouter.routerActive!=='dashboard' && virtualRouter.routerActive!=='categories'  && virtualRouter.routerActive!=='requests' && virtualRouter.routerActive!=='specialists' && virtualRouter.routerActive!=='specialistdetail'" class="sidebar"></app-sidebar-dashboard>
+    <app-specialist-detail [hidden]="virtualRouter.routerActive!=='specialistdetail'"></app-specialist-detail>
+>>>>>>> f06b295 (fase 2 add)
     <app-admin-dashboard [hidden]="virtualRouter.routerActive!=='dashboard' " ></app-admin-dashboard>
     <app-user-dashboard [hidden]="virtualRouter.routerActive!=='dashboard' " ></app-user-dashboard>
     <app-categories [hidden]="virtualRouter.routerActive!=='categories'" ></app-categories>

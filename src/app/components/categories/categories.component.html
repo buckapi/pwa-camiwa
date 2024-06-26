@@ -1,4 +1,4 @@
-<div class="content-wrapper" style="padding-top: 15%;">
+<div class="content-wrapper" style="padding-top: 100px;">
     <div class="main-content">
         <!-- Star navbar -->
      
@@ -7,7 +7,8 @@
             <div class="decoration blur-2"></div>
             <div class="decoration blur-3"></div>
             <div class="container-xl">
-           <h2>{{global.specialties.length}} Especialidades
+           <h2> Especialidades
+            <!-- <h2>{{global.specialties.length}} Especialidades -->
             <i class="btn btn-primary btn-xs d-inline-flex hstack gap-2 fa fa-plus" (click)="openModal()"></i>
 
            </h2>
@@ -22,7 +23,7 @@
                             <div class="table-responsive">
                                 <table class="mb-0 table table-borderless table-hover table-striped">
                                     <tbody>
-                                        <tr *ngFor="let category of global.categories;let i = index" >
+                                        <tr *ngFor="let category of global.categories;let i = index" [hidden]="category.status!='active'" disabled="true">
                                             <td (click)="global.setPreview(category.id,i)" style="cursor: pointer;"> 
                                                 <div class="d-flex">
                                                     <span class="avatar avatar-circle bg-white text-primary flex-shrink-0">

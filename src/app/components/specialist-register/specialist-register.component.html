@@ -15,12 +15,12 @@
                 <li class="multisteps-form__progress-btn" (click)="global.setStep(3)" [class.js-active]="global.specialistRegisterStep === 3">
                     <span>3</span>
                 </li>
-                <li class="multisteps-form__progress-btn" (click)="global.setStep(4)"[class.js-active]="global.specialistRegisterStep === 4">
+                <li class="multisteps-form__progress-btn last" (click)="global.setStep(4)"[class.js-active]="global.specialistRegisterStep === 4">
                     <span>4</span>
                 </li>
-                <li class="multisteps-form__progress-btn last" (click)="global.setStep(5)"[class.js-active]="global.specialistRegisterStep === 5">
+                <!-- <li class="multisteps-form__progress-btn last" (click)="global.setStep(5)"[class.js-active]="global.specialistRegisterStep === 5">
                     <span>5</span>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>
@@ -175,47 +175,50 @@
                         <h2>Información laboral</h2>
                         <p>Ingrese la información necesaria para la atención de sus clientes.</p>
                         <div class="step-content-area">
-                          <div class="budget-area">
+                          <!-- <div class="budget-area">
                             <p><i class="fas fa-clock"></i> Horarios</p>
                             <select name="schedule" [(ngModel)]="formData.schedule">
                               <option>Todos los días</option>
                               <option>2 días por semana</option>
                             </select>
-                          </div>
+                          </div> -->
                           <div class="budget-area">
                             <div class="opti-list">
-                              <p>¿Qué días atenderá?</p>
-                              <ul class="d-flex">
-                                <li class="bg-white">
-                                  <input type="checkbox" name="monday" [(ngModel)]="formData.monday" (click)="onCheckboxChange(0, $event)">
-                                  LU
-                                </li>
-                                <li class="bg-white">
-                                  <input type="checkbox" name="tuesday" [(ngModel)]="formData.tuesday" (click)="onCheckboxChange(1, $event)">
-                                  MA
-                                </li>
-                                <li class="bg-white">
-                                  <input type="checkbox" name="wednesday" [(ngModel)]="formData.wednesday" (click)="onCheckboxChange(2, $event)">
-                                  MI
-                                </li>
-                                <li class="bg-white">
-                                  <input type="checkbox" name="thursday" [(ngModel)]="formData.thursday" (click)="onCheckboxChange(3, $event)">
-                                  JU
-                                </li>
-                                <li class="bg-white">
-                                  <input type="checkbox" name="friday" [(ngModel)]="formData.friday" (click)="onCheckboxChange(4, $event)">
-                                  VI
-                                </li>
-                                <li class="bg-white">
-                                  <input type="checkbox" name="saturday" [(ngModel)]="formData.saturday" (click)="onCheckboxChange(5, $event)">
-                                  SA
-                                </li>
-                                <li class="bg-white">
-                                  <input type="checkbox" name="sunday" [(ngModel)]="formData.sunday" (click)="onCheckboxChange(6, $event)">
-                                  DO
-                                </li>
-                              </ul>
-                            </div>
+                              <div>
+                                <p>¿Qué días atenderá?</p>
+                                <ul class="d-flex">
+                                  <li >
+                                    <input type="checkbox"  [checked]="formData.days[0]" name="monday" [(ngModel)]="formData.days[0]" (click)="onCheckboxChange(0, $event)">
+                                    LU
+                                  </li>
+                                  <li >
+                                    <input type="checkbox" name="tuesday" [(ngModel)]="formData.days[1]" (click)="onCheckboxChange(1, $event)">
+                                    MA
+                                  </li>
+                                  <li >
+                                    <input type="checkbox" name="wednesday" [(ngModel)]="formData.days[2]" (click)="onCheckboxChange(2, $event)">
+                                    MI
+                                  </li>
+                                  <li >
+                                    <input type="checkbox" name="thursday" [(ngModel)]="formData.days[3]" (click)="onCheckboxChange(3, $event)">
+                                    JU
+                                  </li>
+                                  <li >
+                                    <input type="checkbox" name="friday" [(ngModel)]="formData.days[4]" (click)="onCheckboxChange(4, $event)">
+                                    VI
+                                  </li>
+                                  <li >
+                                    <input type="checkbox" name="saturday" [(ngModel)]="formData.days[5]" (click)="onCheckboxChange(5, $event)">
+                                    SA
+                                  </li>
+                                  <li >
+                                    <input type="checkbox" name="sunday" [(ngModel)]="formData.days[6]" (change)="onCheckboxChange(6, $event)">
+                                    DO
+                                  </li>
+                                </ul>
+                              </div>
+                              
+                              </div>
                           </div>
                           
                         </div>
@@ -225,81 +228,22 @@
                   <div class="actions">
                     <ul>
                       <li><span class="js-btn-prev" title="BACK" (click)="global.setStep(2)"><i class="fa fa-arrow-left"></i> Ant. </span></li>
-                      <li><span class="" title="NEXT" (click)="global.setStep(4)">Sig. <i class="fa fa-arrow-right"></i></span></li>
+                      <li><span class="" title="NEXT"   (click)="onSubmit()">Sig. <i class="fa fa-arrow-right"></i></span></li>
                     </ul>
                   </div>
                 </div>
               </div>
-              
+           
             <!-- div 4 -->
-            <div [hidden]="global.specialistRegisterStep!=4" class="" data-animation="slideHorz">
-                <div class="wizard-forms">
-                  <div class="inner pb-100 clearfix">
-                    <div class="form-content pera-content">
-                      <div class="step-inner-content">
-                        <span class="step-no bottom-line">Paso 4</span>
-                        <div class="step-progress float-right">
-                          <span>4 de 5 completado</span>
-                          <div class="step-progress-bar">
-                            <div class="progress">
-                              <div class="progress-bar" style="width:100%"></div>
-                            </div>
-                          </div>
-                        </div>
-                        <h2>Membresía</h2>
-                        <p>Información para continuar en la plataforma</p>
-                        <div class="step-content-field">
-                          <div class="plan-area">
-                            <div class="plan-icon-text text-center active">
-                              <div class="plan-icon">
-                                <i class="fas fa-chess-queen"></i>
-                              </div>
-                              <div class="plan-text">
-                                <h3>Plan Básico</h3>
-                                <p>Info</p>
-                                <input type="radio" name="your_plan" [(ngModel)]="formData.membership" value="Unlimited Plan" checked>
-                              </div>
-                            </div>
-                            <div class="plan-icon-text text-center">
-                              <div class="plan-icon">
-                                <i class="fas fa-cubes"></i>
-                              </div>
-                              <div class="plan-text">
-                                <h3>Plan premium</h3>
-                                <p>Info</p>
-                                <input type="radio" name="your_plan" [(ngModel)]="formData.membership" value="Premium Plan">
-                              </div>
-                            </div>
-                          </div>
-                          <!-- <div class="budget-area">
-                            <p>¿Desea publicitar sus servicios y promociones?</p>
-                            <div class="opti-list">
-                              <ul class="d-flex">
-                                <li class="bg-white active"><input type="checkbox" name="advertise_opt1" [(ngModel)]="formData.advertiseProfile" value="En el perfil" checked>En el perfil</li>
-                                <li class="bg-white"><input type="checkbox" name="advertise_opt2" [(ngModel)]="formData.advertisePlatform" value="En el inicio de la plataforma">En el inicio de la plataforma</li>
-                              </ul>
-                            </div>
-                          </div> -->
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="actions">
-                    <ul>
-                      <li><span class="js-btn-prev" title="BACK" (click)="global.setStep(3)"><i class="fa fa-arrow-left"></i> Ant. </span></li>
-                      <li><span class="" (click)="onSubmit()" title="NEXT">Sig. <i class="fa fa-arrow-right"></i></span></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+        
               
             <!-- div 5 -->
-            <div [hidden]="global.specialistRegisterStep!=5" class="" data-animation="slideHorz">
+            <div [hidden]="global.specialistRegisterStep!=4" class="" data-animation="slideHorz">
                 <div class="wizard-forms">
                     <div class="inner pb-100 clearfix">
                         <div class="form-content pera-content">
                             <div class="step-inner-content">
-                                <span class="step-no bottom-line">Paso 5</span>
+                                <span class="step-no bottom-line">Paso 4</span>
                                 <div class="step-progress float-right">
                                     <span>5 de 5 completado</span>
                                     <div class="step-progress-bar">
@@ -317,7 +261,11 @@
                     
                     <div class="actions">
                         <ul>
+<<<<<<< HEAD
                             <li><span class="js-btn-prev" title="BACK"><i class="fa fa-arrow-left"></i> Ant. </span></li>
+=======
+                            <!-- <li><span class="js-btn-prev" title="BACK"  (click)="global.setStep(3)"><i class="fa fa-arrow-left"></i> Ant. </span></li> -->
+>>>>>>> f06b295 (fase 2 add)
                             <li><button  title="NEXT"><a >Fin</a> <i class="fa fa-arrow-right"></i></button></li>
                         </ul>
                     </div>

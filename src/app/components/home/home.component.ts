@@ -3,13 +3,19 @@ import { GlobalService } from '../../services/global.service';
 import { CommonModule } from '@angular/common';
 import { virtualRouter } from '@app/services/virtualRouter.service';
 import { AuthRESTService } from '@app/services/auth-rest.service';
+<<<<<<< HEAD
 // import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
+=======
+>>>>>>> f06b295 (fase 2 add)
 import Swiper from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+<<<<<<< HEAD
 import { ScriptService } from '@app/services/script.service';
+=======
+>>>>>>> f06b295 (fase 2 add)
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -20,7 +26,10 @@ import { ScriptService } from '@app/services/script.service';
   encapsulation: ViewEncapsulation.Emulated 
 })
 export class HomeComponent implements AfterViewInit {
+<<<<<<< HEAD
   
+=======
+>>>>>>> f06b295 (fase 2 add)
 constructor(
   public script: ScriptService,
   public global:GlobalService,
@@ -65,6 +74,7 @@ constructor(
     this.global.setRoute("dashboard")
   }
 }
+<<<<<<< HEAD
   ngAfterViewInit() {
     new Swiper('.swiper-container', {
 
@@ -97,4 +107,37 @@ constructor(
         },
       });
   }
+=======
+ngAfterViewInit() {
+  new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      // when window width is >= 640px
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      // when window width is >= 768px
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      // when window width is >= 1024px
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 40,
+      },
+    },
+  });
+}
+>>>>>>> f06b295 (fase 2 add)
 }

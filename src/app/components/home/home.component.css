@@ -33,4 +33,8 @@
 .card-hover-bg:hover .card-image-hover::before {
     -webkit-animation: shine .75s;
     animation: shine .75s;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> f06b295 (fase 2 add)

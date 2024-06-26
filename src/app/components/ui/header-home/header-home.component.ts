@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Renderer2 } from '@angular/core';
 import { GlobalService } from '../../../services/global.service';
 import { virtualRouter } from '@app/services/virtualRouter.service';
 import { CommonModule } from '@angular/common';
